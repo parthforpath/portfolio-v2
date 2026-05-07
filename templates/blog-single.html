@@ -10,7 +10,7 @@
     <div class="row justify-content-center">
       <div class="col-12 col-lg-10">
         <article class="single-card p-4 p-md-5">
-          <h2 class="title mb-3">{{ blog.title }}</h2>
+          <h2 class="title reveal-text mb-3">{{ blog.title }}</h2>
           <div class="portfolio-meta d-flex align-items-center mb-3">
             <div class="portfolio-terms d-flex flex-wrap gap-2">{% for tag in blog.tags %}<a class="terms badge" href="#">{{ tag }}</a>{% endfor %}</div>
           </div>
@@ -18,7 +18,7 @@
             <div class="author d-flex align-items-center"><img class="single-author-avatar" src="{{ url_for('static', filename='assets/img/logo/logo.png') }}" alt="{{ blog.author }} avatar"><div class="content ms-3"><h6 class="title mt-0 mb-1">Author</h6><span><strong>{{ blog.author }}</strong></span></div></div>
             <div class="published"><h6 class="title mt-0 mb-1">Published</h6><span>{{ blog.date }}</span></div>
           </div>
-          <div class="post-thumbnail shadow-sm rounded-4 overflow-hidden"><img class="w-100" src="{{ url_for('static', filename=blog.thumbnail) }}" alt="{{ blog.title }}"></div>
+          <div class="post-thumbnail shadow-sm rounded-4 overflow-hidden reveal-img"><img class="w-100" src="{{ url_for('static', filename=blog.thumbnail) }}" alt="{{ blog.title }}"></div>
           <div class="single-content mt-4">{{ blog.content|safe }}</div>
         </article>
       </div>

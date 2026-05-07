@@ -771,6 +771,10 @@
 				transform: "translate3d(0px, 0px, 0px)"
 			}, 0
 		);
+
+		if (typeof ScrollTrigger !== "undefined") {
+			ScrollTrigger.refresh();
+		}
 	};
 
 }(jQuery));

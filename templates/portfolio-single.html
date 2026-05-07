@@ -10,14 +10,14 @@
     <div class="row justify-content-center">
       <div class="col-12 col-lg-10">
         <article class="single-card p-4 p-md-5">
-          <h1 class="title mb-3">{{ project.title }}</h1>
+          <h1 class="title reveal-text mb-3">{{ project.title }}</h1>
           <p class="mb-4">{{ project.full_description }}</p>
-          <div class="project-hero shadow-sm rounded-4 overflow-hidden mb-4"><img class="w-100" src="{{ url_for('static', filename=project.hero_image) }}" alt="{{ project.title }}"></div>
-          <h3>Tech Stack</h3>
+          <div class="project-hero shadow-sm rounded-4 overflow-hidden mb-4 reveal-img"><img class="w-100" src="{{ url_for('static', filename=project.hero_image) }}" alt="{{ project.title }}"></div>
+          <h3 class="reveal-text">Tech Stack</h3>
           <div class="d-flex flex-wrap gap-2 mb-4">{% for tech in project.technologies %}<span class="badge">{{ tech }}</span>{% endfor %}</div>
-          <h3>Features</h3>
+          <h3 class="reveal-text">Features</h3>
           <ul>{% for feature in project.features %}<li>{{ feature }}</li>{% endfor %}</ul>
-          <div class="row g-3">{% for screenshot in project.screenshots %}<div class="col-md-6"><div class="project-shot shadow-sm rounded-4 overflow-hidden"><img class="w-100" src="{{ url_for('static', filename=screenshot) }}" alt="{{ project.title }} screenshot"></div></div>{% endfor %}</div>
+          <div class="row g-3">{% for screenshot in project.screenshots %}<div class="col-md-6"><div class="project-shot shadow-sm rounded-4 overflow-hidden reveal-img"><img class="w-100" src="{{ url_for('static', filename=screenshot) }}" alt="{{ project.title }} screenshot"></div></div>{% endfor %}</div>
           <div class="mt-4 d-flex flex-wrap gap-2">{% if project.live_url %}<a class="btn magnetic-button" href="{{ project.live_url }}" target="_blank" rel="noopener noreferrer">Live Demo</a>{% endif %} {% if project.github_url %}<a class="btn magnetic-button" href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer">GitHub</a>{% endif %}</div>
         </article>
       </div>
