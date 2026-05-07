@@ -1397,7 +1397,7 @@ header .navbar-expand .dropdown:hover > .dropdown-menu {
     box-shadow: none;
   }
   .navbar .navbar-toggler:not(.active) .navbar-header .content .toggler-icon {
-    visibility: hidden;
+    visibility: visible;
   }
   .navbar .navbar-toggler .navbar-header .content .toggler-icon::before,
   .navbar .navbar-toggler .navbar-header .content .toggler-icon::after {
@@ -1410,7 +1410,7 @@ header .navbar-expand .dropdown:hover > .dropdown-menu {
   .navbar .navbar-toggler:not(.active) .navbar-header .content .title {
     font-weight: 600;
     color: var(--primary-p-color);
-    opacity: 1;
+    opacity: 0;
   }
 }
 @media (max-width: 576px) {
