@@ -3676,3 +3676,40 @@ span.page-numbers:hover:not(.current) {
   /* #endregion Modal */
 }
 /* #endregion All Media Queries *//*# sourceMappingURL=style.css.map */
+/* Shared hero tone swap for work/blog headers */
+.breadcrumb-section.hero-tone-swap {
+  background-color: #fff;
+}
+.content-round.hero-tone-swap {
+  background-color: var(--primary-bg-color-2);
+}
+.content-round.hero-tone-swap .rounded-div-background {
+  background-color: var(--primary-bg-color-2);
+}
+
+/* Blog card author icon tuning */
+.blog-item .card-overlay .blog-author-logo img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Improved single page UI */
+.improved-single .single-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--primary-l-color);
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 50px rgba(18, 18, 18, 0.08);
+}
+.improved-single .single-author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.improved-single .post-thumbnail img,
+.improved-single .project-hero img,
+.improved-single .project-shot img {
+  border-radius: 1rem;
+}

@@ -5,6 +5,8 @@
 {% set title_line_1 = 'Latest' %}
 {% set title_line_2 = 'Insights' %}
 {% set show_line = true %}
+{% set hero_header_class = 'hero-tone-swap' %}
+{% set hero_round_class = 'hero-tone-swap' %}
 {% include 'components/hero-header.html' %}
 
 <section class="blog pt-0">
@@ -15,7 +17,7 @@
         <div class="card blog-item">
           <div class="image-holder">
             <a class="card-thumb" href="{{ url_for('blog_detail', slug=blog.slug) }}"><img src="{{ url_for('static', filename=blog.thumbnail) }}" alt="{{ blog.title }}"></a>
-            <div class="card-overlay top fade-down"><div class="logo"><img src="{{ url_for('static', filename='assets/img/logo/logo.png') }}" alt=""></div><div class="post-meta d-flex flex-column ms-3"><span>Posted by</span><span class="post-author"><strong>{{ blog.author }}</strong></span></div></div>
+            <div class="card-overlay top fade-down"><div class="logo blog-author-logo"><img src="{{ url_for('static', filename='assets/img/logo/logo.png') }}" alt=""></div><div class="post-meta d-flex flex-column ms-3"><span>Posted by</span><span class="post-author"><strong>{{ blog.author }}</strong></span></div></div>
           </div>
           <div class="card-content mt-3">
             <div class="heading">
