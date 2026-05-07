@@ -2,66 +2,14 @@
 {% block title %}Works - Portfolio{% endblock %}
 {% block content %}
 
-			<!-- ***** Breadcrumb Area Start ***** -->
-			<section id="home" class="breadcrumb-section">
-				<div class="container">
-					<div class="row justify-content-center align-items-center">
-						<div class="col-12">
-							<!-- Content -->
-							<div class="content w-60">
-								<h1 class="title">Showcasing innovation</h1>
-								<div class="flex ms-auto">
-									<span class="line animate-line"></span>
-									<h1 class="title">and expertise</h1>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- ***** Breadcrumb Area End ***** -->
+{% set title_line_1 = 'Showcasing innovation' %}
+{% set title_line_2 = 'and expertise' %}
+{% set show_line = true %}
+{% include 'components/hero-header.html' %}
 
 			<!-- ***** Project Area Start ***** -->
 			<section class="works explore-area portfolio-filter pt-0">
 				<div class="container">
-					<!--<div class="row justify-content-center text-center">
-						<div class="col-12">
-							<div class="btn-group filter-menu" role="group" aria-label="Basic radio toggle button group">
-								<div class="input-item d-flex">
-									<div class="content">
-										<input type="radio" class="btn-check filter-btn" name="shuffle-filter" id="all" value="all" checked>
-										<label class="btn" for="all">All</label>
-									</div>
-									<span class="count">07</span>
-								</div>
-	
-								<div class="input-item d-flex">
-									<div class="content">
-										<input type="radio" class="btn-check filter-btn" name="shuffle-filter" id="branding" value="branding">
-										<label class="btn" for="branding">Branding</label>
-									</div>
-									<span class="count">04</span>
-								</div>
-	
-								<div class="input-item d-flex">
-									<div class="content">
-										<input type="radio" class="btn-check filter-btn" name="shuffle-filter" id="ui-ux" value="ui-ux">
-										<label class="btn" for="ui-ux">UI/UX</label>
-									</div>
-									<span class="count">03</span>
-								</div>
-	
-								<div class="input-item d-flex">
-									<div class="content">
-										<input type="radio" class="btn-check filter-btn" name="shuffle-filter" id="app-design" value="app-design">
-										<label class="btn" for="app-design">App Design</label>
-									</div>
-									<span class="count">05</span>
-								</div>
-							</div>
-						</div>
-					</div> -->
-
 					<div class="row filter-items items inner">
 {% for project in projects %}
 <div class="col-12 col-lg-{{ '4' if loop.index0 % 2 == 0 else '8' }} item filter-item" data-groups='["dynamic"]'>
