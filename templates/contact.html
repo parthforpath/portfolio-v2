@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+
+{% block title %} Home - Portfolio {% endblock %}
+
+{% block content %}
+
+			<!-- ***** Breadcrumb Area Start ***** -->
+			<section id="home" class="breadcrumb-section">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<!-- Breadcrumb Content -->
+							<div class="breadcrumb-content">
+								<div class="flex">
+									<h1 class="title">Let's talk!</h1>
+									<span class="line animate-line"></span>
+									<h1 class="title">architectures</h1>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- ***** Breadcrumb Area End ***** -->
+
+			<!-- ***** Rounded Div Wrapper Area Start ***** -->
+			<div class="content-round">
+				<div class="rounded-div-wrapper">
+					<div class="rounded-div">
+						<div class="rounded-div-background"></div>
+					</div>
+				</div>
+			</div>
+			<!-- ***** Rounded Div Wrapper Area End ***** -->
+
+			<!-- ***** Contact Area Start ***** -->
+			<section class="contact-area primary-bg">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col-12 col-lg-4 order-last order-md-first">
+							<div class="contact-info">
+								<h3>Schedule a call with me to see if I can help</h3>
+								<p>Whether you’re looking to start a new project or simply want to chat, feel free to reach out to me!</p>
+
+								<div class="content contact-form">
+									<ul class="list-group list-group-flush">
+										<!-- Item -->
+										<li class="list-group-item">
+											<i class="icon icon-phone"></i>
+											<a class="content" href="tel:+917015615471">+91.701.561.5471</a>
+										</li>
+
+										<!-- Item -->
+										<li class="list-group-item">
+											<i class="icon icon-envelope-open"></i>
+											<a class="content" href="mailto:parthchopra111@gmail.com">parthchopra111@gmail.com</a>
+										</li>
+
+										<!-- Item -->
+										<li class="list-group-item">
+											<i class="icon icon-location-pin"></i>
+											<a class="content" href="#">14 Vista Residency, Mohali 140301, IN</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-lg-7 order-first order-md-last mt-sm-4 mt-lg-0">
+							<form id="contact-form" class="contact-form" method="POST" action="{{ url_for('submit_form') }} ">
+								<div class="form-floating mb-3">
+									<input type="text" class="form-control" name="name" id="name" placeholder="Name">
+									<label for="name">Name</label>
+								</div>
+								<div class="form-floating mb-3">
+									<input type="email" class="form-control" name="email" id="email" placeholder="name@example.com">
+									<label for="email">Email address</label>
+								</div>
+								<div class="form-floating mb-3">
+									<input type="number" class="form-control" name="phone" id="phone" placeholder="name@example.com">
+									<label for="phone">Phone</label>
+								</div>
+								<div class="form-floating mb-3">
+									<input type="text" class="form-control" name="company-name" id="company-name" placeholder="name@example.com">
+									<label for="company-name">Company Name</label>
+								</div>
+								<div class="form-floating mb-3">
+									<input type="url" class="form-control" id="website" name="website" placeholder="https://google.com">
+									<label for="website">Company Website</label>
+								</div>
+								<div class="form-group mb-3">
+									<div class="form-label">I'm interested in:</div>
+									<div class="form-input-group">
+										<div class="form-input">
+											<input type="radio" class="btn-check" name="options-base" value="option-cloud-services" id="option-cloud-services">
+											<label class="btn magnetic-button btn-outline" for="option-cloud-services">Cloud Service<span></span></label>
+										</div>
+
+										<div class="form-input">
+											<input type="radio" class="btn-check" name="options-base" value="option-web-design" id="option-web-design">
+											<label class="btn magnetic-button btn-outline" for="option-web-design">Web Design<span></span></label>
+										</div>
+
+										<div class="form-input">
+											<input type="radio" class="btn-check" name="options-base" value="option-custom-software" id="option-custom-software">
+											<label class="btn magnetic-button btn-outline" for="option-custom-software">Custom Software<span></span></label>
+										</div>
+
+										<div class="form-input">
+											<input type="radio" class="btn-check" name="options-base" value="option-other" id="option-other">
+											<label class="btn magnetic-button btn-outline" for="option-other">Other<span></span></label>
+										</div>
+									</div>
+								</div>
+								<div class="form-group mb-3">
+									<div class="form-label">My budget is:</div>
+									<div class="form-input-group">
+										<div class="form-input">
+											<input type="radio" class="btn-check" name="budget-options" value="below 2k" id="budget-1">
+											<label class="btn magnetic-button btn-outline" for="budget-1">&lt; 2k<span></span></label>
+										</div>
+
+										<div class="form-input">
+											<input type="radio" class="btn-check" name="budget-options" value="2-5k" id="budget-2">
+											<label class="btn magnetic-button btn-outline" for="budget-2">2-5k<span></span></label>
+										</div>
+
+										<div class="form-input">
+											<input type="radio" class="btn-check" name="budget-options" value="5-10k" id="budget-3">
+											<label class="btn magnetic-button btn-outline" for="budget-3">5-10k<span></span></label>
+										</div>
+
+										<div class="form-input">
+											<input type="radio" class="btn-check" name="budget-options" value="10-15k" id="budget-4">
+											<label class="btn magnetic-button btn-outline" for="budget-4">10-15k<span></span></label>
+										</div>
+
+										<div class="form-input">
+											<input type="radio" class="btn-check" name="budget-options" value="> 20k" id="budget-5">
+											<label class="btn magnetic-button btn-outline" for="budget-5">&gt; 20k<span></span></label>
+										</div>
+									</div>
+								</div>
+								<div class="form-floating mb-3">
+									<input type="text" class="form-control" name="budget" id="budget" placeholder="name@example.com">
+									<label for="budget">Do you have an exact budget?</label>
+								</div>
+								<div class="form-floating mb-3">
+									<input type="text" class="form-control" id="timeline" name="timeline" placeholder="name@example.com">
+									<label for="timeline">What is your timeline?</label>
+								</div>
+								<div class="form-floating mb-4">
+									<textarea class="form-control" id="message" name="message" placeholder="Leave a comment here" style="height: 100px"></textarea>
+									<label for="message">Message</label>
+								</div>
+								<button type="submit" class="btn magnetic-button">Submit Message <i class="icon bi bi-arrow-right ms-1"></i><span></span></button>
+							</form>
+							<p class="form-message"></p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- ***** Contact Area End ***** -->
+{% endblock %}
