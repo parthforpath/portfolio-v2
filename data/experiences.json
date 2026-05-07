@@ -1,0 +1,23 @@
+[
+  {
+    "company": "AllHeart Web Inc.",
+    "role": "Engineering Manager",
+    "duration": "Sep 2024 – April 2025",
+    "description": "Led a cross-functional team of engineers and designers to build scalable digital solutions. Oversaw project lifecycles from concept to deployment, ensuring technical excellence and timely delivery.",
+    "technologies": ["Leadership", "Architecture", "Delivery"]
+  },
+  {
+    "company": "AllHeart Web Inc.",
+    "role": "Bash Developer",
+    "duration": "April 2024 – Sep 2024",
+    "description": "Developed automation scripts and backend logic using Bash. Streamlined internal workflows and optimized server performance across multiple deployments.",
+    "technologies": ["Bash", "Automation", "Linux"]
+  },
+  {
+    "company": "NetzOptimize Inc.",
+    "role": "Backend Developer",
+    "duration": "March 2023 – March 2024",
+    "description": "Engineered robust backend systems for client platforms. Specialized in API development, database management, and server-side architecture using modern frameworks.",
+    "technologies": ["APIs", "Databases", "Backend"]
+  }
+]
