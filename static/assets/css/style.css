@@ -3780,24 +3780,38 @@ span.page-numbers:hover:not(.current) {
   margin-bottom: 2rem;
 }
 
-.process-stack {
-  display: grid;
-  gap: 1rem;
-}
-
-.process-item {
-  padding: 1.25rem 1.5rem;
-  border-left: 1px solid var(--secondary-l-color);
-  border-bottom: 1px solid var(--secondary-l-color);
-}
-
-.process-item span {
+.workflow-node .node-label {
   display: inline-block;
-  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  display: inline-block;
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--primary-p-color);
+}
+
+.workflow-node small {
+  display: block;
+  margin-top: 0.75rem;
+  color: var(--primary-p-color);
+}
+
+.meta-item {
+  height: 100%;
+  border: 1px solid var(--secondary-l-color);
+  background: var(--secondary-bg-color);
+  padding: 1rem 1.15rem;
+}
+
+.meta-item span {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary-p-color);
+}
+
+.meta-item p {
+  margin: 0.65rem 0 0;
 }
 
 .ai-tools {
@@ -3812,7 +3826,9 @@ span.page-numbers:hover:not(.current) {
 
 .tool-item {
   min-height: 110px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  column-gap: 0.9rem;
   align-items: center;
   padding: 1.25rem;
   border: 1px solid var(--secondary-l-color);
@@ -3820,13 +3836,54 @@ span.page-numbers:hover:not(.current) {
   transition: transform var(--transition-duration) var(--transition-function), box-shadow var(--transition-duration) var(--transition-function);
 }
 
+.tool-item i {
+  font-size: 1rem;
+  color: var(--primary-p-color);
+}
+
 .tool-item span {
-  font-size: 1.05rem;
+  font-size: 1rem;
+  display: block;
+}
+
+.tool-item small {
+  grid-column: 2;
+  color: var(--primary-p-color);
+  font-size: 0.8rem;
 }
 
 .tool-item:hover {
   transform: translateY(-3px);
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
+}
+
+.behind-build {
+  padding: 100px 0 110px;
+}
+
+.build-pipeline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.build-pipeline .pipe-node {
+  border: 1px solid var(--secondary-l-color);
+  background: var(--secondary-bg-color);
+  padding: 0.8rem 1rem;
+  min-width: 140px;
+  text-align: center;
+}
+
+.build-pipeline .pipe-node span {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.build-pipeline .pipe-link {
+  color: var(--primary-p-color);
 }
 
 @media (max-width: 991px) {
@@ -3851,7 +3908,12 @@ span.page-numbers:hover:not(.current) {
 
   .workflow-node,
   .tool-item,
-  .process-item {
+  .meta-item,
+  .build-pipeline .pipe-node {
     padding: 1rem;
+  }
+
+  .build-pipeline .pipe-link {
+    display: none;
   }
 }
