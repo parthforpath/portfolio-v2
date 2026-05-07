@@ -1,10 +1,462 @@
-{% extends 'base.html' %}
-{% block title %}Home - Portfolio{% endblock %}
-{% block content %}
-<section class="works position-relative p-0">
-  <div class="container">
-    <div class="row"><div class="col-12"><div class="intro d-flex justify-content-between align-items-center"><h3 class="title">Selected Works</h3><a class="btn btn-outline content-btn swap-icon" href="{{ url_for('work') }}">View All</a></div></div></div>
-    <div class="row"><div class="stack-wrapper">{% for project in featured_projects %}{% include 'components/project-card.html' %}{% endfor %}</div></div>
-  </div>
-</section>
-{% endblock %}
+{% extends "base.html" %}
+
+{% block title %} Home - Portfolio {% endblock %}
+
+			{% block content %}
+
+			<!-- ***** Hero Area Start ***** -->
+			<section id="home" class="hero-section">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<!-- Hero Content -->
+							<div class="hero-content">
+								<span class="intro-text">Hello! I’m Parth Chopra.</span>
+								<h1 class="title section-title mt-3 mt-md-4 mb-md-5">Building secure, performant, and cloud-native <span>architectures</span></h1>
+
+								<!-- Content -->
+								<div class="content d-flex flex-column flex-md-row justify-content-md-between">
+									<div class="hero-button order-last order-md-first mt-4 mt-md-0">
+										<a class="btn magnetic-button" href="{{ url_for('contact') }}">Let's Talk! <i class="icon bi bi-arrow-right ms-1"></i><span></span></a>
+									</div>
+									<p class="sub-title order-first order-md-last">I design and implement robust backend systems and scalable cloud infrastructure, helping businesses deliver seamless digital experiences with efficiency, security, and speed.									</p>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="hero-bg">
+					<img class="circle-1" src="../static/assets/img/content/hero-bg-1.svg" alt="">
+					<img class="circle-2" src="../static/assets/img/content/hero-bg-2.svg" alt="">
+				</div>
+			</section>
+			<!-- ***** Hero Area End ***** -->
+
+			<!-- ***** Works Area Start ***** -->
+			<section class="works position-relative p-0">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<!-- Intro -->
+							<div class="intro d-flex justify-content-between align-items-center">
+								<h3 class="title">Selected Works</h3>
+								<a class="btn btn-outline content-btn swap-icon" href="{{ url_for('work') }}">View All <i class="icon bi bi-arrow-right-short"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="stack-wrapper">
+								{% for project in featured_projects %}
+								{% include "components/project-card.html" %}
+								{% endfor %}
+							</div></div>
+					</div>
+				</div>
+			</section>
+			<!-- ***** Works Area End ***** -->
+
+			<!-- ***** Services Area Start ***** -->
+			<section class="services">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<!-- Content -->
+							<div class="content">
+								<h2 class="title reveal-text mt-0">Helping businesses scale with robust backend systems and cloud-first solutions.</h2>
+							</div>
+
+							<div class="wrapper">
+								<p class="sub-title">Transforming complex challenges into efficient, secure, and scalable tech solutions with modern backend development and cloud architecture.</p>
+								<a class="btn magnetic-button btn-outline" href="{{ url_for('about') }}">About Me <i class="icon bi bi-arrow-right ms-1"></i><span></span></a>
+							</div>
+						</div>
+					</div>
+
+					<div class="row service-wrapper items mt-md-5">
+						<!-- Service Item -->
+						<div class="col-12 col-md-6 col-lg-4">
+							<div class="item d-flex align-items-start">
+								<div class="item-count">01</div>
+								<div class="content">
+									<h4 class="mt-0">Backend Development</h4>
+									<p>Using cutting-edge frameworks and industry best practices, I specialize in creating backend systems that are scalable and high-performing. I develop reliable server-side solutions that advance applications, ranging from microservices architecture to RESTful APIs.</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Service Item -->
+						<div class="col-12 col-md-6 col-lg-4">
+							<div class="item d-flex align-items-start">
+								<div class="item-count">02</div>
+								<div class="content">
+									<h4 class="mt-0">Cloud Engineering</h4>
+									<p>Designing and deploying cloud-native infrastructure using AWS, Azure, or GCP. I ensure reliability, security, and performance through automation, CI/CD, and infrastructure as code (IaC) practices.</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Service Item -->
+						<div class="col-12 col-md-6 col-lg-4">
+							<div class="item d-flex align-items-start">
+								<div class="item-count">03</div>
+								<div class="content">
+									<h4 class="mt-0">DevOps & CI/CD</h4>
+									<p>Implementing automated pipelines and deployment strategies to streamline development workflows. I help teams deliver faster and more reliably through containerization, monitoring, and continuous delivery.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Marquee -->
+				<div class="marquee">
+					<ul class="list-unstyled">
+						<li class="item">
+							<a href="#" class="marquee-item rounded">
+								<div class="marquee-content">
+									<img src="../static/assets/img/content/python-128.ico" alt="">
+								</div>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#" class="marquee-item rounded">
+								<div class="marquee-content">
+									<img src="../static/assets/img/content/AWS-Logo-Gray.webp" alt="">
+								</div>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#" class="marquee-item rounded">
+								<div class="marquee-content">
+									<img src="../static/assets/img/content/gcp.png" alt="">
+								</div>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#" class="marquee-item rounded">
+								<div class="marquee-content">
+									<img src="../static/assets/img/content/brand-4.png" alt="">
+								</div>
+							</a>	
+						</li>
+						<li class="item">
+							<a href="#" class="marquee-item rounded">
+								<div class="marquee-content">
+									<img src="../static/assets/img/content/wordpress-6-128.ico" alt="">
+								</div>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#" class="marquee-item rounded">
+								<div class="marquee-content">
+									<img src="../static/assets/img/content/mysql-128.ico" alt="">
+								</div>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#" class="marquee-item rounded">
+								<div class="marquee-content">
+									<img src="../static/assets/img/content/brand-7.png" alt="">
+								</div>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#" class="marquee-item rounded">
+								<div class="marquee-content">
+									<img src="../static/assets/img/content/python-128.ico" alt="">
+								</div>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#" class="marquee-item rounded">
+								<div class="marquee-content">
+									<img src="../static/assets/img/content/AWS-Logo-Gray.webp" alt="">
+								</div>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#" class="marquee-item rounded">
+								<div class="marquee-content">
+									<img src="../static/assets/img/content/gcp.png" alt="">
+								</div>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#" class="marquee-item rounded">
+								<div class="marquee-content">
+									<img src="../static/assets/img/content/logo-php-128.ico" alt="">
+								</div>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#" class="marquee-item rounded">
+								<div class="marquee-content">
+									<img src="../static/assets/img/content/wordpress-6-128.ico" alt="">
+								</div>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#" class="marquee-item rounded">
+								<div class="marquee-content">
+									<img src="../static/assets/img/content/mysql-128.ico" alt="">
+								</div>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#" class="marquee-item rounded">
+								<div class="marquee-content">
+									<img src="../static/assets/img/content/brand-7.png" alt="">
+								</div>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#" class="marquee-item rounded">
+								<div class="marquee-content">
+									<img src="../static/assets/img/content/python-128.ico" alt="">
+								</div>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#" class="marquee-item rounded">
+								<div class="marquee-content">
+									<img src="../static/assets/img/content/AWS-Logo-Gray.webp" alt="">
+								</div>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#" class="marquee-item rounded">
+								<div class="marquee-content">
+									<img src="../static/assets/img/content/gcp.png" alt="">
+								</div>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#" class="marquee-item rounded">
+								<div class="marquee-content">
+									<img src="../static/assets/img/content/brand-4.png" alt="">
+								</div>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#" class="marquee-item rounded">
+								<div class="marquee-content">
+									<img src="../static/assets/img/content/wordpress-6-128.ico" alt="">
+								</div>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#" class="marquee-item rounded">
+								<div class="marquee-content">
+									<img src="../static/assets/img/content/mysql-128.ico" alt="">
+								</div>
+							</a>
+						</li>
+						<li class="item">
+							<a href="#" class="marquee-item rounded">
+								<div class="marquee-content">
+									<img src="../static/assets/img/content/brand-7.png" alt="">
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+			
+			</section>
+			<!-- ***** Services Area End ***** -->
+
+			<!-- ***** Rounded Div Wrapper Area Start ***** -->
+			<div class="content-round">
+				<div class="rounded-div-wrapper">
+					<div class="rounded-div">
+						<div class="rounded-div-background"></div>
+					</div>
+				</div>
+			</div>
+			<!-- ***** Rounded Div Wrapper Area End ***** -->
+
+			<!-- ***** Awards Area Start ***** -->
+			<section class="awards sticky primary-bg">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col-12 col-lg-3">
+							<!-- Intro -->
+							<div class="intro">
+								<h3 class="title">Awards &amp; Recognition</h3>
+							</div>
+						</div>
+						<div class="col-12 col-lg-8">
+							<ul class="list-group list-group-flush">
+								<!-- Item -->
+								<li class="list-group-item">
+									<div class="content">
+										<h4 class="title mt-0 mb-3">Employee of the month</h4>
+										<span class="tags mt-3 mt-md-0">December 2024 - AllHeart Web</span>
+									</div>
+									<!-- Award Button -->
+									<a class="award-btn rounded-pill" href="{{ url_for('about') }}">
+										<i class="icon rotate bi bi-arrow-right-short m-0"></i>
+									</a>
+								</li>
+
+								<!-- Item -->
+								<li class="list-group-item">
+									<div class="content">
+										<h4 class="title mt-0 mb-3">Secured 3rd Position</h4>
+										<span class="tags mt-3 mt-md-0">December 2023 - Inter-District Science Exhibition 2022-2023</span>
+									</div>
+									<!-- Award Button -->
+									<a class="award-btn rounded-pill" href="{{ url_for('about') }}">
+										<i class="icon rotate bi bi-arrow-right-short m-0"></i>
+									</a>
+								</li>
+
+								<!-- Item -->
+								<li class="list-group-item">
+									<div class="content">
+										<h4 class="title mt-0 mb-3">Secured 3rd Position</h4>
+										<span class="tags mt-3 mt-md-0">April 2022 - SDC Hackathon 2022</span>
+									</div>
+									<!-- Award Button -->
+									<a class="award-btn rounded-pill" href="{{ url_for('about') }}">
+										<i class="icon rotate bi bi-arrow-right-short m-0"></i>
+									</a>
+								</li>
+
+								<!-- Item -->
+								<li class="list-group-item">
+									<div class="content">
+										<h4 class="title mt-0 mb-3">Secured 2nd Position</h4>
+										<span class="tags mt-3 mt-md-0">December 2021 - Inter-District Science Exhibition 2021-2022</span>
+									</div>
+									<!-- Award Button -->
+									<a class="award-btn rounded-pill" href="{{ url_for('about') }}">
+										<i class="icon rotate bi bi-arrow-right-short m-0"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- ***** Awards Area End ***** -->
+
+			<!-- ***** Insights Area Start ***** -->
+			<section class="blog">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<!-- Intro -->
+							<div class="intro d-flex justify-content-between align-items-center">
+								<h3 class="title">Insights</h3>
+								<!-- <a class="btn btn-outline content-btn swap-icon" href="blog.html">View All <i class="icon bi bi-arrow-right-short"></i></a> -->
+							</div>
+						</div>
+					</div>
+
+					<div class="row items">
+						<div class="col-12 col-md-6 col-lg-4 item">
+							<!-- Post -->
+							<div class="card blog-item">
+								<div class="image-holder">
+									<!-- Card Thumb -->
+									<a class="card-thumb" href="#">
+										<img src="../static/assets/img/blog/ubuntu.png" alt="">
+									</a>
+									<div class="card-overlay top fade-down">
+										<div class="logo">
+											<img src="../static/assets/img/logo/logo.png"  width="80px" alt="">
+										</div>
+										<div class="post-meta d-flex flex-column ms-3">
+											<span>Posted by</span>
+											<span class="post-author"><strong>Parth Chopra</strong></span>
+										</div>
+									</div>
+								</div>
+								<!-- Card Overlay -->
+								<div class="card-content mt-3">
+									<div class="heading">
+										<div class="post-meta d-flex">
+											<span class="post-date"><i class="bi bi-clock me-1"></i>August 20, 2024</span>
+										</div>
+										<h4 class="title my-2">
+											<a href="#">Ubuntu Look changes essentials - Packages to change ubuntu UI</a>
+										</h4>
+										<div class="card-terms">
+											<a class="terms badge" href="#">Linux</a>
+											<a class="terms badge" href="#">Design</a>
+											<a class="terms badge" href="#">UI</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-md-6 col-lg-4 item">
+							<!-- Post -->
+							<div class="card blog-item">
+								<div class="image-holder">
+									<!-- Card Thumb -->
+									<a class="card-thumb" href="#">
+										<img src="../static/assets/img/blog/CI-CD.png" alt="">
+									</a>
+									<div class="card-overlay top fade-down">
+										<div class="logo">
+											<img src="../static/assets/img/logo/logo.png"  width="80px" alt="">
+										</div>
+										<div class="post-meta d-flex flex-column ms-3">
+											<span>Posted by</span>
+											<span class="post-author"><strong>Parth Chopra</strong></span>
+										</div>
+									</div>
+								</div>
+								<!-- Card Overlay -->
+								<div class="card-content mt-3">
+									<div class="heading">
+										<div class="post-meta d-flex">
+											<span class="post-date"><i class="bi bi-clock me-1"></i>September 15, 2024</span>
+										</div>
+										<h4 class="title my-2">
+											<a href="#">Building Gitlab/Github CI/CD with docker</a>
+										</h4>
+										<div class="card-terms">
+											<a class="terms badge" href="#">GitLab</a>
+											<a class="terms badge" href="#">CI/CD</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
+			<!-- ***** Insights Area End ***** -->
+
+			<!-- ***** CTA Area Start ***** -->
+			<section class="cta border-top border-light-subtle">
+				<div class="container">
+					<div class="row justify-content-center text-center">
+						<div class="col-12 col-md-10 col-lg-7">
+							<h2 class="title mb-0 mb-md-2">Let's Create Something</h2>
+							<div class="cta-text">
+								<span class="line-item">Together</span>
+								<span class="line"></span>
+								<a class="btn magnetic-button" href="{{ url_for('contact') }}">Get In Touch! <i class="icon bi bi-arrow-right ms-1"></i><span></span></a>
+							</div>
+
+							<!-- Socials -->
+							<div class="socials mt-5">
+								<nav class="nav justify-content-center">
+									<a class="nav-link swap-icon" href="https://github.com/parthforpath">Github <i class="icon rotate bi bi-arrow-right-short"></i></a>
+									<a class="nav-link swap-icon" href="https://linkedin.com/in/parthchopra111">Linkedin <i class="icon rotate bi bi-arrow-right-short"></i></a>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- ***** CTA Area End ***** -->
+
+			{% endblock %}

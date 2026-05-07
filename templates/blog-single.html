@@ -1,11 +1,17 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% block title %}{{ blog.title }} - Blog{% endblock %}
 {% block content %}
-<section class="blog-single"><div class="container">
-  <h2 class="title">{{ blog.title }}</h2>
-  <div class="content d-flex"><span class="me-3">{{ blog.author }}</span><span>{{ blog.date }}</span></div>
-  <img class="w-100 my-4" src="{{ url_for('static', filename=blog.thumbnail) }}" alt="{{ blog.title }}">
-  <div>{{ blog.content|safe }}</div>
-  <div class="tags mt-4">{% for tag in blog.tags %}<a class="badge mx-1" href="#">{{ tag }}</a>{% endfor %}</div>
-</div></section>
+<section class="blog-single">
+  <div class="container">
+    <div class="row justify-content-center"><div class="col-12">
+      <div class="portfolio-meta d-flex align-items-center"><div class="portfolio-terms">{% for tag in blog.tags %}<a class="terms" href="#">{{ tag }}</a>{% endfor %}</div></div>
+      <h2 class="title">{{ blog.title }}</h2>
+      <div class="content item d-flex flex-column flex-md-row">
+        <div class="author d-flex align-items-start"><img src="{{ url_for('static', filename='assets/img/logo/logo.png') }}" alt=""><div class="content ms-3"><h6 class="title mt-0 mb-2">Author</h6><span><strong>{{ blog.author }}</strong></span></div></div>
+        <div class="published ms-sm-4 my-3 my-sm-0"><h6 class="title mt-0 mb-2">Published</h6><span>{{ blog.date }}</span></div>
+      </div>
+    </div></div>
+    <div class="row justify-content-center portfolio-content"><div class="col-12"><div class="post-thumbnail"><img class="w-100" src="{{ url_for('static', filename=blog.thumbnail) }}" alt="{{ blog.title }}"></div><div>{{ blog.content|safe }}</div></div></div>
+  </div>
+</section>
 {% endblock %}
