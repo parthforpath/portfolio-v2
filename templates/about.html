@@ -48,47 +48,10 @@
 						</div>
 						<div class="col-12 col-lg-8">
 							<div class="row items">
-								<!-- Item -->
-								<div class="col-12 col-md-6 item">
-									<div class="content">
-										<span class="count">01.</span>
-										<h4 class="title mt-0 mb-3">AllHeart Web Inc.</h4>
-										<h6 class="position my-3">Engineering Manager</h6>
-										<span class="badge small">Sep 2024 – April 2025</span>
-										<p>Led a cross-functional team of engineers and designers to build scalable digital solutions. Oversaw project lifecycles from concept to deployment, ensuring technical excellence and timely delivery.</p>
-									</div>
-								</div>
-								<!-- Item -->
-								<div class="col-12 col-md-6 item">
-									<div class="content">
-										<span class="count">02.</span>
-										<h4 class="title mt-0 mb-3">AllHeart Web Inc.</h4>
-										<h6 class="position my-3">Bash Developer</h6>
-										<span class="badge small">April 2024 – Sep 2024</span>
-										<p>Developed automation scripts and backend logic using Bash. Streamlined internal workflows and optimized server performance across multiple deployments.</p>
-									</div>
-								</div>
-								<!-- Item -->
-								<div class="col-12 col-md-6 item">
-									<div class="content">
-										<span class="count">03.</span>
-										<h4 class="title mt-0 mb-3">NetzOptimize Inc.</h4>
-										<h6 class="position my-3">Backend Developer</h6>
-										<span class="badge small">March 2023 – March 2024</span>
-										<p>Engineered robust backend systems for client platforms. Specialized in API development, database management, and server-side architecture using modern frameworks.</p>
-									</div>
-								</div>
-								<!-- Item --
-								<div class="col-12 col-md-6 item">
-									<div class="content">
-										<span class="count">04.</span>
-										<h4 class="title mt-0 mb-3">Fre Agency</h4>
-										<h6 class="position my-3">Junior Web Developer (Internship)</h6>
-										<span class="badge small">Jun 2017 – Jul 2019</span>
-										<p>During my internship at WebWorks Agency, I had the opportunity to work alongside experienced developers on various web design and development projects.</p>
-									</div>
-								</div> -->
-							</div>
+{% for exp in experiences %}
+{% include 'components/experience-card.html' %}
+{% endfor %}
+</div>
 						</div>
 					</div>
 				</div>
