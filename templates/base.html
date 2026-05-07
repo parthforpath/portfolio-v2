@@ -1,267 +1,33 @@
 <!doctype html>
 <html class="no-js" lang="en">
-
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="description" content="">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-	<!-- Title  -->
-	<title>{% block title %}Portfolio - Parth Chopra{% endblock %}</title>
-
-	<!-- Favicon  -->
-	<link rel="icon" href="../static/assets/img/favicon.png">
-
-	<!-- ***** All CSS Files ***** -->
-
-	<!-- Style css -->
-	<link rel="stylesheet" href="../static/assets/css/style.css">
-
+  <meta charset="UTF-8">
+  <meta name="description" content="{% block meta_description %}Portfolio website{% endblock %}">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>{% block title %}Portfolio - Parth Chopra{% endblock %}</title>
+  <link rel="icon" href="{{ url_for('static', filename='assets/img/favicon.png') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}">
 </head>
-
 <body>
-	<!-- ***** Magic Cursor Area Start ***** -->
-	<div id="magic-cursor">
-		<div id="cursor"></div>
-	</div>
-	<!-- ***** Magic Cursor Area End ***** -->
-
-	<!-- ***** Preloader Area Start ***** -->
-	<div class="preloader">
-		<svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
-			<path id="loader" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
-		</svg>
-
-		<!-- Loader Container -->
-		<div class="loader-container">
-			<div class="loaded">
-				<span>L</span>
-				<span>O</span>
-				<span>A</span>
-				<span>D</span>
-				<span>I</span>
-				<span>N</span>
-				<span>G</span>
-			</div>
-		</div>
-	</div>
-	<!-- ***** Preloader Area End ***** -->
-
-	<!-- ***** Main Area Start ***** -->
-	<div class="main">
-		<!-- ***** Header Start ***** -->
-		<header id="header">
-			<!-- Navbar -->
-			<nav class="navbar navbar-expand">
-				<div class="container header">
-					<!-- Navbar Brand-->
-					<div class="magnetic">
-						<a class="navbar-brand" href="{{ url_for('index') }}">
-							Parth Chopra.
-						</a>
-					</div>
-					<div class="ms-auto"></div>
-
-					<!-- Navbar Nav -->
-					<ul class="navbar-nav items d-none d-md-block">
-						<li class="nav-item">
-							<a href="{{ url_for('index') }}" class="nav-link  {% if current_page == 'home' %}active{% endif %}">Home</a>
-						</li>
-						<li class="nav-item">
-							<a href="{{ url_for('work') }}" class="nav-link {% if current_page == 'work' %}active{% endif %}">Works</a>
-						</li>
-						<li class="nav-item">
-							<a href="{{ url_for('about') }}" class="nav-link  {% if current_page == 'about' %}active{% endif %}">About</a>
-						</li>
-						<li class="nav-item">
-							<a href="{{ url_for('contact') }}" class="nav-link {% if current_page == 'contact' %}active{% endif %}">Contact</a>
-						</li>
-					</ul>
-
-					<!-- Navbar Toggler -->
-					<div class="navbar-toggler scrolled" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-						<div class="navbar-header">
-							<div class="content">
-								<div class="toggler-icon"></div>
-								<span class="title">Menu</span>
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</nav>
-
-			<div id="navbar-main" class="main">
-				
-			</div>
-		</header>
-		<!-- ***** Header End ***** -->
-
-		<!-- ***** Main Wrapper Start ***** -->
-		<div id="main-wrapper" class="main-wrapper">
-
-
-            <!-- ***** Content Start ***** -->
-
-            {% block content %}
-
-            {% endblock %}
-
-
-        
-			<!-- ***** Footer Area Start ***** -->
-			<footer class="footer-area">
-				<div class="container">
-					<div class="row">
-						<div class="col-12">
-							<div class="footer-content d-flex flex-wrap justify-content-center justify-content-md-between align-items-center py-4">
-								<!-- Copyright -->
-								<div class="copyright">Designed with ❤️.</div>
-								<!-- Scroll To Top -->
-								<div id="scroll-to-top" class="scroll-to-top mt-3 mt-sm-0">
-									<a href="#header" class="smooth-anchor">Scroll to Top</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer>
-			<!-- ***** Footer Area End ***** -->
-
-			<!--====== Modal Search Area Start ======-->
-			<div id="search" class="modal fade p-0">
-				<div class="modal-dialog dialog-animated">
-					<div class="modal-content h-100">
-						<div class="modal-header" data-bs-dismiss="modal">
-							Search <i class="far fa-times-circle icon-close"></i>
-						</div>
-						<div class="modal-body">
-
-							<form class="row search-form">
-								<div class="col-12 align-self-center">
-									<div class="row">
-										<div class="col-12 pb-3">
-											<h2 class="search-title mt-0 mb-3">What are you looking for?</h2>
-											<p>Enter your query now and find precisely what you seek.</p>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-12 input-group mt-md-4">
-											<input type="text" placeholder="Enter your keywords">
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-12 input-group align-self-center">
-											<button class="btn content-btn mt-4">Search</button>
-										</div>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--====== Modal Search Area End ======-->
-
-			<!--====== Offcanvas Area Start ======-->
-			<div class="offcanvas-wrapper">
-				<!-- Navbar Toggler -->
-				<div class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">
-					<div class="navbar-header">
-						<div class="content">
-							<div class="toggler-icon"></div>
-							<span class="title">Menu</span>
-						</div>
-					</div>
-				</div>
-
-				<!-- Offcanvas -->
-				<div class="offcanvas offcanvas-end" id="offcanvasRight">
-					<div class="fixed-nav-rounded-div">
-						<div class="rounded-div-wrap">
-							<div class="rounded-div"></div>
-						</div>
-					</div>
-
-					<!-- Offcanvas Content -->
-					<div class="offcanvas-content">
-						<div class="offcanvas-navigation">
-							<div class="offcanvas-header">
-								<h5 class="offcanvas-title mt-0">Navigation</h5>
-							</div>
-
-							<hr>
-
-							<!-- Navigation Menu -->
-							<div class="offcanvas-body">
-								<ul class="navbar-nav menu pt-md-4">
-									<li class="nav-item">
-										<a href="{{ url_for('index') }}" class="nav-link {% if current_page == 'home' %}active{% endif %}">Home <span class="item-count">(01)</span></a>
-									</li>
-									<li class="nav-item">
-										<a href="{{ url_for('work') }}" class="nav-link {% if current_page == 'work' %}active{% endif %}">Works <span class="item-count">(02)</span></a>
-									</li>
-									<li class="nav-item">
-										<a href="{{ url_for('about') }}" class="nav-link {% if current_page == 'about' %}active{% endif %}">About <span class="item-count">(03)</span></a>
-									</li>
-									<li class="nav-item">
-										<a href="{{ url_for('contact') }}" class="nav-link {% if current_page == 'contact' %}active{% endif %}">Contact <span class="item-count">(04)</span></a>
-									</li>
-								</ul>
-							</div>
-						</div>
-
-						<!-- Offcanvas Social -->
-						<div class="offcanvas-social">
-							<div class="offcanvas-header">
-								<h5 class="offcanvas-title mt-0">Socials</h5>
-							</div>
-
-							<hr>
-
-							<!-- Socials -->
-							<div class="socials offcanvas-body">
-								<nav class="nav">
-									<a class="nav-link swap-icon" href="https://github.com/parthforpath">Github <i class="icon rotate bi bi-arrow-right-short"></i></a>
-									<a class="nav-link swap-icon" href="https://linkedin.com/in/parthchopra111">Linkedin <i class="icon rotate bi bi-arrow-right-short"></i></a>
-								</nav>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--====== Offcanvas Area End ======-->
-
-		</div>
-		<!-- ***** Main Wrapper End ***** -->
-
-	</div>
-	<!-- ***** Main Area End ***** -->
-
-
-	<!-- ***** All jQuery Plugins ***** -->
-
-	<!-- jQuery(necessary for all JavaScript plugins) -->
-	<script src="../static/assets/js/vendor/jquery.min.js"></script>
-
-	<!-- Bootstrap js -->
-	<script src="../static/assets/js/vendor/popper.min.js"></script>
-	<script src="../static/assets/js/vendor/bootstrap.min.js"></script>
-
-	<!-- Plugins js -->
-	<script src="../static/assets/js/vendor/all.min.js"></script>
-	<script src="../static/assets/js/vendor/gsap.min.js"></script>
-	<script src="../static/assets/js/vendor/ScrollTrigger.min.js"></script>
-	<script src="../static/assets/js/vendor/lenis.min.js"></script>
-	<script src="../static/assets/js/vendor/SplitType.min.js"></script>
-	<script src="../static/assets/js/vendor/shuffle.min.js"></script>
-	<script src="../static/assets/js/vendor/gallery.min.js"></script>
-	<script src="../static/assets/js/vendor/slider.min.js"></script>
-
-	<!-- Main js -->
-	<script src="../static/assets/js/main.js"></script>
+<div class="main">
+  {% include 'components/header.html' %}
+  <div id="main-wrapper" class="main-wrapper">
+    {% block content %}{% endblock %}
+    {% include 'components/footer.html' %}
+  </div>
+</div>
+<script src="{{ url_for('static', filename='assets/js/vendor/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/vendor/popper.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/vendor/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/vendor/all.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/vendor/gsap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/vendor/ScrollTrigger.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/vendor/lenis.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/vendor/SplitType.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/vendor/shuffle.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/vendor/gallery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/vendor/slider.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
 </body>
-
 </html>
