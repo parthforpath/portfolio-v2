@@ -2,7 +2,6 @@
   <div class="card portfolio-item layout-2 scale has-shadow animate-bottom">
     <div class="image-holder">
       <a class="card-thumb magnetic-button" href="{{ url_for('project_detail', slug=project.slug) }}">
-        <div class="reveal-img">
         <img src="{{ url_for('static', filename=project.thumbnail) }}" alt="{{ project.title }}" loading="lazy">
       </div>
       </a>
