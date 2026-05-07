@@ -27,7 +27,8 @@ DATA_FILE = 'form_submissions.json'
 def index():
     projects = load_projects()
     featured_projects = [project for project in projects if project.get('featured')]
-    return render_template('index.html', current_page='home', featured_projects=featured_projects)
+    featured_blogs = load_blogs()[:2]
+    return render_template('index.html', current_page='home', featured_projects=featured_projects, featured_blogs=featured_blogs)
 
 
 @app.route('/about/')
