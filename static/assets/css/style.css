@@ -3739,7 +3739,6 @@ span.page-numbers:hover:not(.current) {
   position: relative;
   padding: 1.5rem;
   border: 1px solid var(--secondary-l-color);
-  background: var(--secondary-bg-color);
   transition: transform var(--transition-duration) var(--transition-function), border-color var(--transition-duration) var(--transition-function);
 }
 
@@ -3790,16 +3789,9 @@ span.page-numbers:hover:not(.current) {
   color: var(--primary-p-color);
 }
 
-.workflow-node small {
-  display: block;
-  margin-top: 0.75rem;
-  color: var(--primary-p-color);
-}
-
 .meta-item {
   height: 100%;
   border: 1px solid var(--secondary-l-color);
-  background: var(--secondary-bg-color);
   padding: 1rem 1.15rem;
 }
 
@@ -3832,7 +3824,6 @@ span.page-numbers:hover:not(.current) {
   align-items: center;
   padding: 1.25rem;
   border: 1px solid var(--secondary-l-color);
-  background: var(--secondary-bg-color);
   transition: transform var(--transition-duration) var(--transition-function), box-shadow var(--transition-duration) var(--transition-function);
 }
 
@@ -3870,10 +3861,14 @@ span.page-numbers:hover:not(.current) {
 
 .build-pipeline .pipe-node {
   border: 1px solid var(--secondary-l-color);
-  background: var(--secondary-bg-color);
   padding: 0.8rem 1rem;
   min-width: 140px;
   text-align: center;
+}
+
+.workflow-node .workflow-icon {
+  float: right;
+  color: var(--primary-p-color);
 }
 
 .build-pipeline .pipe-node span {
