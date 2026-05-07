@@ -34,7 +34,13 @@
           <h5 class="offcanvas-title" id="offcanvasRightLabel">Navigation</h5>
         </div>
         <div class="offcanvas-body px-0">
-          <ul class="navbar-nav items"></ul>
+          <ul class="navbar-nav items">
+            <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link {% if current_page == 'home' %}active{% endif %}">Home</a></li>
+            <li class="nav-item"><a href="{{ url_for('work') }}" class="nav-link {% if current_page == 'work' %}active{% endif %}">Works</a></li>
+            <li class="nav-item"><a href="{{ url_for('blogs') }}" class="nav-link {% if current_page == 'blogs' %}active{% endif %}">Blogs</a></li>
+            <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link {% if current_page == 'about' %}active{% endif %}">About</a></li>
+            <li class="nav-item"><a href="{{ url_for('contact') }}" class="nav-link {% if current_page == 'contact' %}active{% endif %}">Contact</a></li>
+          </ul>
         </div>
       </div>
       <div class="offcanvas-footer">
