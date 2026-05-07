@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "citetube",
+    "title": "Citetube",
+    "short_description": "AI-assisted citation and content workflow platform.",
+    "full_description": "Citetube helps researchers and creators organize references, summarize materials, and publish citation-aware content with confidence.",
+    "thumbnail": "assets/img/content/citetube.png",
+    "hero_image": "assets/img/content/citetube.png",
+    "technologies": ["Python", "Flask"],
+    "features": ["Citation management", "Content organization", "Streamlined publishing workflows"],
+    "screenshots": ["assets/img/content/citetube.png"],
+    "live_url": "",
+    "github_url": "",
+    "featured": true
+  },
+  {
+    "slug": "attender",
+    "title": "Attender",
+    "short_description": "Attendance and workforce tracking solution.",
+    "full_description": "Attender provides lightweight attendance tracking with role-based access and operational dashboards for faster team management.",
+    "thumbnail": "assets/img/content/attender.png",
+    "hero_image": "assets/img/content/attender.png",
+    "technologies": ["PHP", "JavaScript"],
+    "features": ["Attendance automation", "Dashboard analytics", "Role-based controls"],
+    "screenshots": ["assets/img/content/attender.png"],
+    "live_url": "",
+    "github_url": "",
+    "featured": true
+  },
+  {
+    "slug": "optolabzone",
+    "title": "Optolabzone",
+    "short_description": "Modern business website built for conversion.",
+    "full_description": "Optolabzone is a polished web presence focused on clear messaging, conversion-focused layout, and maintainable content management.",
+    "thumbnail": "assets/img/content/optolabzone.png",
+    "hero_image": "assets/img/content/optolabzone.png",
+    "technologies": ["WordPress"],
+    "features": ["Responsive pages", "CMS publishing", "Brand-consistent design"],
+    "screenshots": ["assets/img/content/optolabzone.png"],
+    "live_url": "",
+    "github_url": "",
+    "featured": true
+  },
+  {
+    "slug": "nursescript",
+    "title": "NurseScript",
+    "short_description": "Healthcare-oriented automation and AI workflows.",
+    "full_description": "NurseScript supports healthcare teams with automation, structured data flows, and AI-assisted processing to reduce repetitive work.",
+    "thumbnail": "assets/img/content/nursescript.png",
+    "hero_image": "assets/img/content/nursescript.png",
+    "technologies": ["Python", "AI/ML"],
+    "features": ["Workflow automation", "AI-assisted processing", "Operational visibility"],
+    "screenshots": ["assets/img/content/nursescript.png"],
+    "live_url": "",
+    "github_url": "",
+    "featured": true
+  }
+]

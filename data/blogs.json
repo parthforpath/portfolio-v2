@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "ci-cd-guide",
+    "title": "Practical CI/CD for Growing Teams",
+    "thumbnail": "assets/img/blog/CI-CD.png",
+    "date": "August 20, 2024",
+    "author": "Parth Chopra",
+    "tags": ["DevOps", "CI/CD", "Automation"],
+    "excerpt": "A practical walkthrough to build reliable CI/CD pipelines that scale with your engineering team.",
+    "content": "<p>CI/CD is the backbone of fast and dependable software delivery. A healthy pipeline reduces release risk, shortens feedback cycles, and gives teams confidence to ship continuously.</p><p>Start by keeping your build deterministic, fast, and observable. Add automated testing gates, environment promotion controls, and rollback strategies. Over time, standardize these flows across services so every team follows a predictable release contract.</p><p>For cloud-native systems, include infrastructure checks and policy-as-code in your pipeline. This ensures security and compliance evolve with your application code rather than after deployment.</p>"
+  },
+  {
+    "slug": "ubuntu-server-hardening",
+    "title": "Ubuntu Server Hardening Checklist",
+    "thumbnail": "assets/img/blog/ubuntu.png",
+    "date": "September 05, 2024",
+    "author": "Parth Chopra",
+    "tags": ["Security", "Ubuntu", "Backend"],
+    "excerpt": "A concise checklist for locking down Ubuntu servers in production.",
+    "content": "<p>Server hardening should be part of your deployment baseline, not an afterthought. Begin with package updates, least-privilege access, and key-based SSH authentication.</p><p>Restrict exposed services, enforce firewall policies, and set up intrusion monitoring. Add log centralization and alerting so you can detect suspicious activity quickly.</p><p>Finally, automate these hardening steps using scripts or infrastructure tooling to keep environments consistent and auditable.</p>"
+  }
+]
