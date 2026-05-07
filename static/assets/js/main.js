@@ -36,41 +36,124 @@
 (function ($) {
     'use strict';
 
-	$(window).on('load', function () {
-		const svg = document.getElementById("loader");
-		const tl = gsap.timeline();
+    const PRELOADER_SHOWN_KEY = 'preloader:navigating';
 
-		const startShape = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
-		const endShape = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
+    function runPreloaderExitAnimation() {
+        const preloader = document.querySelector('.preloader');
+        const svg = document.getElementById('loader');
 
-		// Animation for text fading out
-		tl.to(".loader-container .loaded", {
-			delay: 1.2,
-			y: -50,
-			opacity: 0,
-			duration: 0.6,
-		});
+        if (!preloader || !svg || preloader.dataset.animating === 'true') {
+            return;
+        }
 
-		// Animate the SVG morphing from start shape to end shape
-		tl.to(svg, {
-			duration: 0.6,
-			attr: { d: startShape },
-			ease: "power1.easeIn",
-		}).to(svg, {
-			duration: 0.6,
-			attr: { d: endShape },
-			ease: "power1.easeOut",
-		});
+        preloader.dataset.animating = 'true';
+        preloader.style.display = 'flex';
+        preloader.style.zIndex = '99999';
 
-		// Move and hide the preloader
-		tl.to(".preloader", {
-			y: -1000,
-			duration: 0.8,
-		}).to(".preloader", {
-			zIndex: -1,
-			display: "none",
-		});
-	});
+        const tl = gsap.timeline({
+            onComplete: () => {
+                preloader.style.display = 'none';
+                preloader.style.zIndex = '-1';
+                preloader.dataset.animating = 'false';
+                document.body.style.overflow = '';
+                sessionStorage.removeItem(PRELOADER_SHOWN_KEY);
+            }
+        });
+
+        const startShape = 'M0 502S175 272 500 272s500 230 500 230V0H0Z';
+        const endShape = 'M0 2S175 1 500 1s500 1 500 1V0H0Z';
+
+        tl.to('.loader-container .loaded', {
+            delay: 1.2,
+            y: -50,
+            opacity: 0,
+            duration: 0.6,
+        })
+        .to(svg, {
+            duration: 0.6,
+            attr: { d: startShape },
+            ease: 'power1.in',
+        })
+        .to(svg, {
+            duration: 0.6,
+            attr: { d: endShape },
+            ease: 'power1.out',
+        })
+        .to('.preloader', {
+            y: -1000,
+            duration: 0.8,
+        });
+    }
+
+    function runPreloaderEnterAnimation(onComplete) {
+        const preloader = document.querySelector('.preloader');
+        const svg = document.getElementById('loader');
+
+        if (!preloader || !svg || preloader.dataset.navigating === 'true') {
+            return;
+        }
+
+        preloader.dataset.navigating = 'true';
+        preloader.style.display = 'flex';
+        preloader.style.zIndex = '99999';
+        preloader.style.transform = 'translateY(0)';
+
+        gsap.set(svg, { attr: { d: 'M0,1005S175,995,500,995s500,5,500,5V0H0Z' } });
+        gsap.set('.loader-container .loaded', { opacity: 1, y: 0 });
+
+        sessionStorage.setItem(PRELOADER_SHOWN_KEY, '1');
+        document.body.style.overflow = 'hidden';
+
+        gsap.to('.loader-container .loaded', {
+            opacity: 0.4,
+            duration: 0.25,
+            onComplete: () => {
+                if (typeof onComplete === 'function') {
+                    onComplete();
+                }
+            }
+        });
+    }
+
+    function shouldInterceptNavigation(link) {
+        if (!link || !link.href) return false;
+        if (link.target === '_blank' || link.hasAttribute('download')) return false;
+        if (link.getAttribute('rel') === 'external') return false;
+
+        const url = new URL(link.href, window.location.href);
+
+        if (url.origin !== window.location.origin) return false;
+        if (url.protocol === 'mailto:' || url.protocol === 'tel:') return false;
+        if (url.pathname === window.location.pathname && url.search === window.location.search && url.hash) return false;
+        if (url.href === window.location.href) return false;
+
+        return true;
+    }
+
+    $(window).on('load', function () {
+        runPreloaderExitAnimation();
+    });
+
+    window.addEventListener('pageshow', function () {
+        const preloader = document.querySelector('.preloader');
+        if (preloader && preloader.style.display !== 'none' && !sessionStorage.getItem(PRELOADER_SHOWN_KEY)) {
+            runPreloaderExitAnimation();
+        }
+    });
+
+    document.addEventListener('click', function (event) {
+        const link = event.target.closest('a');
+
+        if (!shouldInterceptNavigation(link)) {
+            return;
+        }
+
+        event.preventDefault();
+
+        runPreloaderEnterAnimation(function () {
+            window.location.href = link.href;
+        });
+    });
 
 }(jQuery));
 
