@@ -36,8 +36,22 @@
 			<!-- ***** Works Area Start ***** -->
 			<section class="works position-relative p-0">
 				<div class="container">
-					<div class="row"><div class="col-12"><div class="intro d-flex justify-content-between align-items-center"><h3 class="title">Selected Works</h3><a class="btn btn-outline content-btn swap-icon" href="{{ url_for('work') }}">View All <i class="icon bi bi-arrow-right-short"></i></a></div></div></div>
-					<div class="row"><div class="stack-wrapper">{% for project in featured_projects %}<div class="stack-item"><div class="card portfolio-item layout-2 scale has-shadow"><div class="image-holder"><a class="card-thumb" href="{{ url_for('project_detail', slug=project.slug) }}"><img src="{{ url_for('static', filename=project.thumbnail) }}" alt="{{ project.title }}"></a><div class="card-overlay"><div class="heading"><h4 class="title mt-2 mt-md-3 mb-3">{{ project.title }}</h4><div class="show-project"><div class="card-terms">{% for tech in project.technologies[:2] %}<a class="terms badge outlined" href="#">{{ tech }}</a>{% endfor %}</div><div class="project-link"><a href="{{ url_for('project_detail', slug=project.slug) }}">Show Project</a></div></div></div></div></div></div></div>{% endfor %}</div></div>
+					<div class="row">
+						<div class="col-12">
+							<!-- Intro -->
+							<div class="intro d-flex justify-content-between align-items-center">
+								<h3 class="title">Selected Works</h3>
+								<a class="btn btn-outline content-btn swap-icon" href="{{ url_for('work') }}">View All <i class="icon bi bi-arrow-right-short"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="stack-wrapper">
+								{% for project in featured_projects %}
+								{% include "components/project-card.html" %}
+								{% endfor %}
+							</div></div>
+					</div>
 				</div>
 			</section>
 			<!-- ***** Works Area End ***** -->

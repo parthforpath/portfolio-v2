@@ -5,18 +5,26 @@
   <div class="container"><div class="row"><div class="col-12"><div class="breadcrumb-content animated-title w-60"><h1 class="title animate-hero">Latest Insights</h1></div></div></div></div>
 </section>
 <section class="blog pt-0">
-  <div class="container"><div class="row items">
-    {% for blog in blogs %}
-    <div class="col-12 col-md-6 col-lg-4 item">
-      <div class="card blog-item">
-        <div class="image-holder">
-          <a class="card-thumb" href="{{ url_for('blog_detail', slug=blog.slug) }}"><img src="{{ url_for('static', filename=blog.thumbnail) }}" alt="{{ blog.title }}"></a>
-          <div class="card-overlay top fade-down"><div class="logo"><img src="{{ url_for('static', filename='assets/img/logo/logo.png') }}" alt=""></div><div class="post-meta d-flex flex-column ms-3"><span>Posted by</span><span class="post-author"><strong>{{ blog.author }}</strong></span></div></div>
+  <div class="container">
+    <div class="row items">
+      {% for blog in blogs %}
+      <div class="col-12 col-md-6 col-lg-4 item">
+        <div class="card blog-item">
+          <div class="image-holder">
+            <a class="card-thumb" href="{{ url_for('blog_detail', slug=blog.slug) }}"><img src="{{ url_for('static', filename=blog.thumbnail) }}" alt="{{ blog.title }}"></a>
+            <div class="card-overlay top fade-down"><div class="logo"><img src="{{ url_for('static', filename='assets/img/logo/logo.png') }}" alt=""></div><div class="post-meta d-flex flex-column ms-3"><span>Posted by</span><span class="post-author"><strong>{{ blog.author }}</strong></span></div></div>
+          </div>
+          <div class="card-content mt-3">
+            <div class="heading">
+              <div class="post-meta d-flex"><span class="post-date"><i class="bi bi-clock me-1"></i>{{ blog.date }}</span></div>
+              <h4 class="title my-2"><a href="{{ url_for('blog_detail', slug=blog.slug) }}">{{ blog.title }}</a></h4>
+              <div class="card-terms">{% for tag in blog.tags %}<a class="terms badge" href="#">{{ tag }}</a>{% endfor %}</div>
+            </div>
+          </div>
         </div>
-        <div class="card-content mt-3"><div class="heading"><div class="post-meta d-flex"><span class="post-date"><i class="bi bi-clock me-1"></i>{{ blog.date }}</span></div><h4 class="title my-2"><a href="{{ url_for('blog_detail', slug=blog.slug) }}">{{ blog.title }}</a></h4><div class="card-terms">{% for tag in blog.tags %}<a class="terms badge" href="#">{{ tag }}</a>{% endfor %}</div></div></div>
       </div>
+      {% endfor %}
     </div>
-    {% endfor %}
-  </div></div>
+  </div>
 </section>
 {% endblock %}
