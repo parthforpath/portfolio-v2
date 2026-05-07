@@ -580,6 +580,11 @@
 	let itemAnimate = document.querySelectorAll('.reveal-img');
 
 	itemAnimate.forEach(current => {
+		if (current.classList.contains('no-reveal-horizontal') || current.closest('.works')) {
+			gsap.set(current, { autoAlpha: 1 });
+			return;
+		}
+
 		let img = current.querySelector('img');
 
 		let tl = gsap.timeline({
@@ -771,6 +776,10 @@
 				transform: "translate3d(0px, 0px, 0px)"
 			}, 0
 		);
+
+		if (typeof ScrollTrigger !== "undefined") {
+			ScrollTrigger.refresh();
+		}
 	};
 
 }(jQuery));

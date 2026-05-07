@@ -14,15 +14,15 @@
     <div class="row items">
       {% for blog in blogs %}
       <div class="col-12 col-md-6 col-lg-4 item">
-        <div class="card blog-item">
+        <div class="card blog-item animate-bottom">
           <div class="image-holder">
-            <a class="card-thumb" href="{{ url_for('blog_detail', slug=blog.slug) }}"><img src="{{ url_for('static', filename=blog.thumbnail) }}" alt="{{ blog.title }}"></a>
+            <a class="card-thumb magnetic-button" href="{{ url_for('blog_detail', slug=blog.slug) }}"><div class="reveal-img"><img src="{{ url_for('static', filename=blog.thumbnail) }}" alt="{{ blog.title }}"></div></a>
             <div class="card-overlay top fade-down"><div class="logo blog-author-logo"><img src="{{ url_for('static', filename='assets/img/logo/logo.png') }}" alt=""></div><div class="post-meta d-flex flex-column ms-3"><span>Posted by</span><span class="post-author"><strong>{{ blog.author }}</strong></span></div></div>
           </div>
           <div class="card-content mt-3">
             <div class="heading">
               <div class="post-meta d-flex"><span class="post-date"><i class="bi bi-clock me-1"></i>{{ blog.date }}</span></div>
-              <h4 class="title my-2"><a href="{{ url_for('blog_detail', slug=blog.slug) }}">{{ blog.title }}</a></h4>
+              <h4 class="title reveal-text my-2"><a class="swap-icon" href="{{ url_for('blog_detail', slug=blog.slug) }}">{{ blog.title }}</a></h4>
               <div class="card-terms d-flex flex-wrap gap-2 mt-3">{% for tag in blog.tags %}<a class="terms badge" href="#">{{ tag }}</a>{% endfor %}</div>
             </div>
           </div>

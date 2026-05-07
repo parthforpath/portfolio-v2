@@ -5,21 +5,21 @@
 			{% block content %}
 
 			<!-- ***** Hero Area Start ***** -->
-			<section id="home" class="hero-section">
+			<section id="home" class="hero-section animate-hero">
 				<div class="container">
 					<div class="row">
 						<div class="col-12">
 							<!-- Hero Content -->
 							<div class="hero-content">
-								<span class="intro-text">Hello! I’m Parth Chopra.</span>
-								<h1 class="title section-title mt-3 mt-md-4 mb-md-5">Building secure, performant, and cloud-native <span>architectures</span></h1>
+								<span class="intro-text animate-top">Hello! I’m Parth Chopra.</span>
+								<h1 class="title section-title reveal-text mt-3 mt-md-4 mb-md-5">Building secure, performant, and cloud-native <span>architectures</span></h1>
 
 								<!-- Content -->
 								<div class="content d-flex flex-column flex-md-row justify-content-md-between">
 									<div class="hero-button order-last order-md-first mt-4 mt-md-0">
 										<a class="btn magnetic-button" href="{{ url_for('contact') }}">Let's Talk! <i class="icon bi bi-arrow-right ms-1"></i><span></span></a>
 									</div>
-									<p class="sub-title order-first order-md-last">I design and implement robust backend systems and scalable cloud infrastructure, helping businesses deliver seamless digital experiences with efficiency, security, and speed.									</p>
+									<p class="sub-title order-first order-md-last animate-bottom">I design and implement robust backend systems and scalable cloud infrastructure, helping businesses deliver seamless digital experiences with efficiency, security, and speed.									</p>
 								</div>
 
 							</div>
@@ -40,7 +40,7 @@
 						<div class="col-12">
 							<!-- Intro -->
 							<div class="intro d-flex justify-content-between align-items-center">
-								<h3 class="title">Selected Works</h3>
+								<h3 class="title reveal-text">Selected Works</h3>
 								<a class="btn btn-outline content-btn swap-icon" href="{{ url_for('work') }}">View All <i class="icon bi bi-arrow-right-short"></i></a>
 							</div>
 						</div>
@@ -356,79 +356,41 @@
 					</div>
 
 					<div class="row items">
+						{% for blog in featured_blogs %}
 						<div class="col-12 col-md-6 col-lg-4 item">
-							<!-- Post -->
 							<div class="card blog-item">
 								<div class="image-holder">
-									<!-- Card Thumb -->
-									<a class="card-thumb" href="#">
-										<img src="../static/assets/img/blog/ubuntu.png" alt="">
+									<a class="card-thumb" href="{{ url_for('blog_detail', slug=blog.slug) }}">
+										<img src="{{ url_for('static', filename=blog.thumbnail) }}" alt="{{ blog.title }}">
 									</a>
 									<div class="card-overlay top fade-down">
 										<div class="logo">
-											<img src="../static/assets/img/logo/logo.png"  width="80px" alt="">
+											<img src="../static/assets/img/logo/logo.png" width="80px" alt="">
 										</div>
 										<div class="post-meta d-flex flex-column ms-3">
 											<span>Posted by</span>
-											<span class="post-author"><strong>Parth Chopra</strong></span>
+											<span class="post-author"><strong>{{ blog.author }}</strong></span>
 										</div>
 									</div>
 								</div>
-								<!-- Card Overlay -->
 								<div class="card-content mt-3">
 									<div class="heading">
 										<div class="post-meta d-flex">
-											<span class="post-date"><i class="bi bi-clock me-1"></i>August 20, 2024</span>
+											<span class="post-date"><i class="bi bi-clock me-1"></i>{{ blog.date }}</span>
 										</div>
 										<h4 class="title my-2">
-											<a href="#">Ubuntu Look changes essentials - Packages to change ubuntu UI</a>
+											<a href="{{ url_for('blog_detail', slug=blog.slug) }}">{{ blog.title }}</a>
 										</h4>
 										<div class="card-terms">
-											<a class="terms badge" href="#">Linux</a>
-											<a class="terms badge" href="#">Design</a>
-											<a class="terms badge" href="#">UI</a>
+											{% for tag in blog.tags[:3] %}
+											<a class="terms badge" href="#">{{ tag }}</a>
+											{% endfor %}
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-
-						<div class="col-12 col-md-6 col-lg-4 item">
-							<!-- Post -->
-							<div class="card blog-item">
-								<div class="image-holder">
-									<!-- Card Thumb -->
-									<a class="card-thumb" href="#">
-										<img src="../static/assets/img/blog/CI-CD.png" alt="">
-									</a>
-									<div class="card-overlay top fade-down">
-										<div class="logo">
-											<img src="../static/assets/img/logo/logo.png"  width="80px" alt="">
-										</div>
-										<div class="post-meta d-flex flex-column ms-3">
-											<span>Posted by</span>
-											<span class="post-author"><strong>Parth Chopra</strong></span>
-										</div>
-									</div>
-								</div>
-								<!-- Card Overlay -->
-								<div class="card-content mt-3">
-									<div class="heading">
-										<div class="post-meta d-flex">
-											<span class="post-date"><i class="bi bi-clock me-1"></i>September 15, 2024</span>
-										</div>
-										<h4 class="title my-2">
-											<a href="#">Building Gitlab/Github CI/CD with docker</a>
-										</h4>
-										<div class="card-terms">
-											<a class="terms badge" href="#">GitLab</a>
-											<a class="terms badge" href="#">CI/CD</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
+						{% endfor %}
 					</div>
 				</div>
 			</section>
