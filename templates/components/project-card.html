@@ -3,6 +3,7 @@
     <div class="image-holder">
       <a class="card-thumb magnetic-button" href="{{ url_for('project_detail', slug=project.slug) }}">
         <img src="{{ url_for('static', filename=project.thumbnail) }}" alt="{{ project.title }}" loading="lazy">
+      </div>
       </a>
       <div class="card-overlay">
         <div class="heading">
