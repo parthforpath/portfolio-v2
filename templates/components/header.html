@@ -1,0 +1,17 @@
+<header id="header">
+  <nav class="navbar navbar-expand">
+    <div class="container header">
+      <div class="magnetic">
+        <a class="navbar-brand" href="{{ url_for('index') }}">Parth Chopra.</a>
+      </div>
+      <div class="ms-auto"></div>
+      <ul class="navbar-nav items d-none d-md-block">
+        <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link {% if current_page == 'home' %}active{% endif %}">Home</a></li>
+        <li class="nav-item"><a href="{{ url_for('work') }}" class="nav-link {% if current_page == 'work' %}active{% endif %}">Works</a></li>
+        <li class="nav-item"><a href="{{ url_for('blogs') }}" class="nav-link {% if current_page == 'blogs' %}active{% endif %}">Blogs</a></li>
+        <li class="nav-item"><a href="{{ url_for('about') }}" class="nav-link {% if current_page == 'about' %}active{% endif %}">About</a></li>
+        <li class="nav-item"><a href="{{ url_for('contact') }}" class="nav-link {% if current_page == 'contact' %}active{% endif %}">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
