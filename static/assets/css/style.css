@@ -3678,13 +3678,13 @@ span.page-numbers:hover:not(.current) {
 /* #endregion All Media Queries *//*# sourceMappingURL=style.css.map */
 /* Shared hero tone swap for work/blog headers */
 .breadcrumb-section.hero-tone-swap {
-  background-color: #fff;
+  background-color: var(--primary-bg-color);
 }
 .content-round.hero-tone-swap {
-  background-color: var(--primary-bg-color-2);
+  background-color: #fff;
 }
 .content-round.hero-tone-swap .rounded-div-background {
-  background-color: var(--primary-bg-color-2);
+  background-color: var(--primary-bg-color);
 }
 
 /* Blog card author icon tuning */
