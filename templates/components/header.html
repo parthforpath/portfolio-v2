@@ -5,7 +5,7 @@
         <a class="navbar-brand" href="{{ url_for('index') }}">Parth Chopra.</a>
       </div>
       <div class="ms-auto"></div>
-      <ul class="navbar-nav items d-none d-md-block">
+      <ul class="navbar-nav items d-none d-md-flex">
         <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link {% if current_page == 'home' %}active{% endif %}">Home</a></li>
         <li class="nav-item"><a href="{{ url_for('work') }}" class="nav-link {% if current_page == 'work' %}active{% endif %}">Works</a></li>
         <li class="nav-item"><a href="{{ url_for('blogs') }}" class="nav-link {% if current_page == 'blogs' %}active{% endif %}">Blogs</a></li>
@@ -15,3 +15,31 @@
     </div>
   </nav>
 </header>
+
+<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Toggle navigation">
+  <span class="navbar-header">
+    <span class="content">
+      <span class="toggler-icon"></span>
+      <span class="title">Menu</span>
+    </span>
+  </span>
+</button>
+
+<div class="offcanvas-wrapper">
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="fixed-nav-rounded-div"><div class="rounded-div-wrap"><div class="rounded-div"></div></div></div>
+    <div class="offcanvas-content menu" id="menu">
+      <div>
+        <div class="offcanvas-header px-0">
+          <h5 class="offcanvas-title" id="offcanvasRightLabel">Navigation</h5>
+        </div>
+        <div class="offcanvas-body px-0">
+          <ul class="navbar-nav items"></ul>
+        </div>
+      </div>
+      <div class="offcanvas-footer">
+        <a class="nav-link" href="{{ url_for('contact') }}">Let’s work together</a>
+      </div>
+    </div>
+  </div>
+</div>
