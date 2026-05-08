@@ -7,6 +7,9 @@
       <div class="card-overlay">
         <div class="heading">
           <h4 class="title mt-2 mt-md-3 mb-3">{{ project.title }}</h4>
+          <p class="project-subtitle">
+            {{ project.short_description }}
+          </p>
           <div class="show-project">
             <div class="card-terms">
               {% for tech in project.technologies[:2] %}<a class="terms badge outlined" href="#">{{ tech }}</a>{% endfor %}
