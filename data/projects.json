@@ -167,25 +167,212 @@
   {
     "slug": "crostyl",
     "title": "Crostyl",
-    "short_description": "SEO-optimized ecommerce experience built with React and Django architecture.",
-    "full_description": "Crostyl delivers a modern ecommerce experience with a React frontend and Django-powered backend designed for SEO and scalability.",
+    "short_description": "SEO-optimized premium streetwear ecommerce experience engineered with React and Django.",
+    "full_description": "Crostyl is a high-performance headless ecommerce platform designed for a modern streetwear brand, combining immersive frontend interactions, premium UI systems, and SEO-focused architecture to create a scalable digital commerce experience.",
+    "meta_description": "Crostyl is a premium streetwear ecommerce case study covering headless React and Django architecture, SEO-driven frontend UX, media optimization, and immersive fashion commerce.",
     "thumbnail": "assets/img/projects/crostyl-thumbnail.webp",
     "hero_image": "assets/img/projects/crostyl-thumbnail.webp",
     "technologies": [
-      "Ecommerce",
-      "Full Stack"
+      "E-commerce",
+      "Fashion Technology",
+      "Frontend Engineering"
     ],
     "features": [
-      "SEO-first architecture",
-      "React storefront UX",
-      "Django backend services"
+      "Dynamic Product Catalog",
+      "Interactive Product Pages",
+      "3D / AR Product Visualization",
+      "Mobile-Optimized Ecommerce UI",
+      "JWT-Based Authentication",
+      "Order Processing Workflow",
+      "Animated Frontend Interactions",
+      "Search & Filtering Systems",
+      "Responsive Fashion Galleries",
+      "Custom Admin Dashboard",
+      "High-Performance Product Rendering",
+      "SEO-Optimized Storefront Architecture"
     ],
     "screenshots": [
-      "assets/img/content/attender.png"
+      "assets/img/projects/crostyl-thumbnail.webp",
+      "assets/img/content/case-1.jpg",
+      "assets/img/content/case-2.jpg",
+      "assets/img/content/case-3.jpg",
+      "assets/img/content/case-4.jpg",
+      "assets/img/content/case-5.jpg"
     ],
     "live_url": "",
     "github_url": "",
-    "featured": true
+    "featured": true,
+    "category": "E-commerce / Fashion Technology / Frontend Engineering",
+    "tagline": "SEO-optimized premium streetwear ecommerce experience engineered with React and Django.",
+    "overview_paragraphs": [
+      "Crostyl was built to translate a premium streetwear brand identity into a modern digital commerce experience.",
+      "The platform combines high-performance frontend engineering, immersive product interactions, and scalable ecommerce architecture to create a visually engaging yet conversion-focused storefront.",
+      "Built using a decoupled React + Django architecture, the system emphasizes responsiveness, SEO optimization, media performance, and seamless customer experiences across desktop and mobile devices."
+    ],
+    "problem_intro": "Modern ecommerce brands require more than functional storefronts. They need digital experiences that reinforce brand identity while remaining fast, discoverable, and scalable.",
+    "problem_points": [
+      "Maintaining high visual quality without sacrificing performance",
+      "Optimizing large fashion media assets",
+      "Ensuring responsive mobile interactions",
+      "Improving SEO discoverability",
+      "Synchronizing frontend and backend ecommerce workflows"
+    ],
+    "problem_outro": "A key realization during development was that frontend UI/UX architecture directly impacts search discoverability, engagement, and ecommerce growth.",
+    "solution_intro": "To solve these challenges, Crostyl adopted a headless ecommerce architecture powered by React and Django REST Framework.",
+    "solution_points": [
+      "SEO-focused frontend structures",
+      "Animated interaction systems",
+      "Optimized media delivery workflows",
+      "Responsive mobile-first layouts",
+      "Immersive product visualization",
+      "Modular ecommerce APIs"
+    ],
+    "solution_outro": "The result was a premium digital storefront engineered to balance aesthetics, performance, and discoverability.",
+    "architecture": {
+      "title": "Headless Ecommerce Architecture",
+      "intro": "Crostyl uses a decoupled frontend and backend architecture to allow independent scalability, improved frontend flexibility, and future platform expansion.",
+      "components": [
+        "React frontend for dynamic UI rendering, animations, customer interactions, product browsing, and immersive visual experiences",
+        "Django backend for product inventory, authentication, order workflows, admin operations, and API delivery"
+      ],
+      "stages": [
+        {
+          "name": "Independent Frontend Layer",
+          "description": "The storefront can evolve around performance, animation quality, and SEO structure without being tightly coupled to backend release cycles."
+        },
+        {
+          "name": "API-Driven Commerce Layer",
+          "description": "Product, authentication, order, and administration workflows are exposed through modular backend APIs that support future platform expansion."
+        }
+      ],
+      "outro": "This architecture enabled cleaner deployment pipelines, frontend performance optimization, scalable API-driven workflows, future mobile app compatibility, and independent frontend/backend evolution."
+    },
+    "extra_sections": [
+      {
+        "title": "SEO-Driven Frontend Experience",
+        "paragraphs": [
+          "One of the most important engineering insights during Crostyl development was that ecommerce growth depends heavily on frontend structure and discoverability, not just visual design."
+        ],
+        "points": [
+          "Semantic HTML structures",
+          "Optimized metadata handling",
+          "Responsive rendering",
+          "Reduced layout shifts",
+          "Media optimization",
+          "Mobile-first interactions",
+          "Performance-focused animation systems"
+        ],
+        "outro": "The frontend architecture was designed to ensure that visual quality never compromised loading performance or search discoverability."
+      },
+      {
+        "title": "Immersive Product Experience",
+        "paragraphs": [
+          "To create a premium fashion-commerce experience, Crostyl introduced multiple interactive visual systems."
+        ],
+        "points": [
+          "3D product previews",
+          "AR-ready model rendering",
+          "Zoomable high-resolution galleries",
+          "Animated transitions",
+          "Scroll-based reveal effects",
+          "Interactive product carousels"
+        ],
+        "outro": "These interactions were engineered carefully to maintain smooth performance across desktop and mobile devices."
+      }
+    ],
+    "technology_groups": {
+      "Frontend": [
+        "React 19",
+        "Vite",
+        "Framer Motion",
+        "Bootstrap 5",
+        "Sass",
+        "Swiper",
+        "FontAwesome"
+      ],
+      "Backend": [
+        "Python",
+        "Django",
+        "Django REST Framework"
+      ],
+      "Database": [
+        "MySQL",
+        "SQLite"
+      ],
+      "Frontend Experience": [
+        "Google Model Viewer",
+        "Photoswipe",
+        "Drift Zoom"
+      ],
+      "Infrastructure": [
+        "Docker",
+        "Docker Compose",
+        "Vercel",
+        ".htaccess Configuration"
+      ],
+      "Authentication & APIs": [
+        "REST APIs",
+        "SimpleJWT Authentication"
+      ]
+    },
+    "challenges": [
+      "Optimizing high-resolution fashion media without degrading performance",
+      "Synchronizing frontend/backend ecommerce workflows across environments",
+      "Maintaining animation smoothness on mobile devices",
+      "Handling responsive product galleries with minimal layout shifts",
+      "Managing CORS and deployment-specific API configurations",
+      "Ensuring consistent product rendering across browsers and devices",
+      "Balancing immersive visuals with SEO and accessibility requirements"
+    ],
+    "outcomes": [
+      "Created a premium digital storefront aligned with the streetwear brand identity",
+      "Improved frontend responsiveness and interaction smoothness",
+      "Reduced layout shifts using optimized caching strategies",
+      "Enhanced product discoverability through SEO-aware frontend architecture",
+      "Improved mobile shopping usability and engagement",
+      "Streamlined media optimization workflows for scalable asset management",
+      "Established scalable foundations for future ecommerce expansion"
+    ],
+    "key_learnings": [
+      {
+        "title": "SEO Is Frontend Architecture",
+        "description": "Search discoverability is heavily influenced by frontend structure, rendering behavior, and semantic design decisions."
+      },
+      {
+        "title": "Visual Quality Must Be Engineered",
+        "description": "Premium ecommerce experiences require balancing immersive visuals with loading performance and responsiveness."
+      },
+      {
+        "title": "Headless Commerce Enables Scalability",
+        "description": "Separating frontend and backend systems improves flexibility, deployment control, and future expansion potential."
+      },
+      {
+        "title": "Animation Systems Need Performance Awareness",
+        "description": "Frontend animations must be designed carefully to preserve smooth interactions across devices."
+      }
+    ],
+    "screenshot_captions": [
+      "Premium streetwear landing experience",
+      "Interactive product visualization workflow",
+      "Responsive mobile commerce interface",
+      "High-resolution product gallery system",
+      "Customer order dashboard",
+      "Scalable ecommerce administration panel"
+    ],
+    "primary_cta": "View Case Study",
+    "secondary_cta": "Explore Experience",
+    "related_blog": {
+      "title": "Engineering the SEO Foundation Behind Crostyl",
+      "description": "Read the companion article on why SEO-optimized frontend architecture matters for modern ecommerce brands.",
+      "button": "Read Engineering Article",
+      "url": "/blog/seo-optimized-frontend-ecommerce-architecture/"
+    },
+    "cta": {
+      "title": "Building Digital Commerce Experiences That Scale",
+      "description": "From immersive ecommerce platforms to scalable frontend systems, we engineer modern digital experiences designed for performance, discoverability, and brand impact.",
+      "button": "Let's Build Your Platform",
+      "url": "/contact/"
+    }
   },
   {
     "slug": "theblissfullbeginnings",

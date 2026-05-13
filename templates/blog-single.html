@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block title %}{{ blog.title }} - Blog{% endblock %}
+{% block meta_description %}{{ blog.meta_description or blog.excerpt }}{% endblock %}
 {% block content %}
 <section class="blog-single improved-single">
   <div class="container">
@@ -16,9 +17,17 @@
           <div class="content item d-flex flex-column flex-md-row align-items-md-center gap-3 mb-4">
             <div class="author d-flex align-items-center"><img class="single-author-avatar" src="{{ url_for('static', filename='assets/img/logo/logo.png') }}" alt="{{ blog.author }} avatar"><div class="content ms-3"><h6 class="title mt-0 mb-1">Author</h6><span><strong>{{ blog.author }}</strong></span></div></div>
             <div class="published"><h6 class="title mt-0 mb-1">Published</h6><span>{{ blog.date }}</span></div>
+            {% if blog.reading_time %}<div class="published"><h6 class="title mt-0 mb-1">Reading Time</h6><span>{{ blog.reading_time }}</span></div>{% endif %}
           </div>
           <div class="post-thumbnail shadow-sm rounded-4 overflow-hidden reveal-img"><img class="w-100" src="{{ url_for('static', filename=blog.thumbnail) }}" alt="{{ blog.title }}"></div>
           <div class="single-content mt-4">{{ blog.content|safe }}</div>
+          {% if blog.related_project %}
+          <div class="mt-5 p-4 rounded-4 shadow-sm">
+            <h4>{{ blog.related_project.title }}</h4>
+            <p>{{ blog.related_project.description }}</p>
+            <a class="btn magnetic-button" href="{{ blog.related_project.url }}">{{ blog.related_project.button }}</a>
+          </div>
+          {% endif %}
         </article>
       </div>
     </div>

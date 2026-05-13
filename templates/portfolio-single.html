@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}{{ project.title }} - Portfolio{% endblock %}
+{% block meta_description %}{{ project.meta_description or project.short_description }}{% endblock %}
 {% block content %}
 <section class="blog-single portfolio-single improved-single">
   <div class="container">
@@ -50,6 +51,15 @@
           <p>{{ project.architecture.outro }}</p>
           {% endif %}
 
+          {% if project.extra_sections %}
+          {% for section in project.extra_sections %}
+          <h3 class="reveal-text">{{ section.title }}</h3>
+          {% for paragraph in section.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+          {% if section.points %}<ul>{% for point in section.points %}<li>{{ point }}</li>{% endfor %}</ul>{% endif %}
+          {% if section.outro %}<p>{{ section.outro }}</p>{% endif %}
+          {% endfor %}
+          {% endif %}
+
           <h3 class="reveal-text">Features</h3>
           <ul>{% for feature in project.features %}<li>{{ feature }}</li>{% endfor %}</ul>
 
@@ -70,6 +80,14 @@
 
           {% if project.challenges %}<h3 class="reveal-text">Engineering Challenges</h3><ul>{% for challenge in project.challenges %}<li>{{ challenge }}</li>{% endfor %}</ul>{% endif %}
           {% if project.outcomes %}<h3 class="reveal-text">Outcomes</h3><ul>{% for outcome in project.outcomes %}<li>{{ outcome }}</li>{% endfor %}</ul>{% endif %}
+
+          {% if project.related_blog %}
+          <div class="mt-4 mb-4 p-4 rounded-4 shadow-sm">
+            <h4>{{ project.related_blog.title }}</h4>
+            <p>{{ project.related_blog.description }}</p>
+            <a class="btn magnetic-button" href="{{ project.related_blog.url }}">{{ project.related_blog.button }}</a>
+          </div>
+          {% endif %}
 
           {% if project.key_learnings %}
           <h3 class="reveal-text">Key Engineering Learnings</h3>
