@@ -27,7 +27,9 @@ DATA_FILE = 'form_submissions.json'
 def index():
     projects = load_projects()
     featured_projects = [project for project in projects if project.get('featured')]
-    featured_blogs = load_blogs()[:2]
+    blogs = load_blogs()
+    featured_blogs = [blog for blog in blogs if blog.get('featured')] or blogs
+    featured_blogs = featured_blogs[:3]
     return render_template('index.html', current_page='home', featured_projects=featured_projects, featured_blogs=featured_blogs)
 
 

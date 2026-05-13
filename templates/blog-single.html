@@ -10,7 +10,7 @@
         {% set fallback_url = url_for('blogs') %}
         {% include 'components/back-button.html' %}
         <article class="single-card p-4 p-md-5">
-          <h2 class="title reveal-text mb-3">{{ blog.title }}</h2>
+          <h1 class="title reveal-text mb-3">{{ blog.title }}</h1>
           <div class="portfolio-meta d-flex align-items-center mb-3">
             <div class="portfolio-terms d-flex flex-wrap gap-2">{% for tag in blog.tags %}<a class="terms badge" href="#">{{ tag }}</a>{% endfor %}</div>
           </div>

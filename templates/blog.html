@@ -21,8 +21,13 @@
           </div>
           <div class="card-content mt-3">
             <div class="heading">
-              <div class="post-meta d-flex"><span class="post-date"><i class="bi bi-clock me-1"></i>{{ blog.date }}</span></div>
+              <div class="post-meta d-flex flex-wrap gap-3">
+                <span class="post-date"><i class="bi bi-clock me-1"></i>{{ blog.date }}</span>
+                {% if blog.reading_time %}<span class="post-date"><i class="bi bi-book me-1"></i>{{ blog.reading_time }}</span>{% endif %}
+                {% if blog.featured %}<span class="terms badge">Featured</span>{% endif %}
+              </div>
               <h4 class="title reveal-text my-2"><a class="swap-icon" href="{{ url_for('blog_detail', slug=blog.slug) }}">{{ blog.title }}</a></h4>
+              {% if blog.excerpt %}<p>{{ blog.excerpt }}</p>{% endif %}
               <div class="card-terms d-flex flex-wrap gap-2 mt-3">{% for tag in blog.tags %}<a class="terms badge" href="#">{{ tag }}</a>{% endfor %}</div>
             </div>
           </div>
