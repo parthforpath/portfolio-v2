@@ -2,16 +2,167 @@
   {
     "slug": "nursescript",
     "title": "NurseScript",
-    "short_description": "Voice-powered healthcare handover platform with AI transcription and analytics workflows.",
+    "short_description": "NurseScript digitizes and streamlines nursing shift handovers using AI-powered transcription, structured ISBAR reporting, and multi-stage validation workflows designed for reliable clinical documentation.",
     "full_description": "NurseScript is a healthcare handover platform that combines voice capture, AI transcription, and analytics-driven workflows for clinical teams.",
     "thumbnail": "assets/img/projects/nurseScript-thumbnail.webp",
     "hero_image": "assets/img/projects/nurseScript-thumbnail.webp",
-    "technologies": ["AI", "Healthcare"],
-    "features": ["Voice handover capture", "AI transcription workflows", "Operational analytics"],
-    "screenshots": ["assets/img/content/citetube.png"],
+    "technologies": [
+      "AI",
+      "Healthcare"
+    ],
+    "features": [
+      "Real-Time AI Transcription",
+      "Intelligent ISBAR Report Generation",
+      "Multi-Pass AI Validation",
+      "Structured Clinical Documentation",
+      "Patient Handover History",
+      "Searchable Medical Records",
+      "PDF & CSV Export",
+      "Secure Authentication",
+      "Nurse Workflow Optimization",
+      "AI-Based Medical Categorization"
+    ],
+    "screenshots": [
+      "assets/img/content/nursescript.png",
+      "assets/img/content/case-1.jpg",
+      "assets/img/content/case-2.jpg",
+      "assets/img/content/case-3.jpg",
+      "assets/img/content/case-4.jpg",
+      "assets/img/content/case-5.jpg"
+    ],
     "live_url": "",
     "github_url": "",
-    "featured": true
+    "featured": true,
+    "category": "Healthcare / AI Systems / Medical Workflow Platform",
+    "tagline": "AI-powered healthcare handover platform engineered for structured clinical documentation and intelligent workflow automation.",
+    "overview_paragraphs": [
+      "NurseScript is a healthcare workflow platform designed to modernize nurse shift handovers through AI-assisted documentation and structured clinical reporting.",
+      "The platform combines real-time transcription, intelligent categorization, and multi-stage AI validation pipelines to transform unstructured spoken handovers into standardized ISBAR-based medical reports.",
+      "Built for healthcare teams and administrators, the system improves documentation consistency, reduces manual workload, and creates searchable historical handover records for operational continuity."
+    ],
+    "problem_intro": "Traditional nurse handovers were often verbal, fragmented, or manually documented, making information retrieval and consistency difficult across departments.",
+    "problem_points": [
+      "Documentation time",
+      "Formatting inconsistencies",
+      "Information gaps",
+      "Operational inefficiencies during shift transitions"
+    ],
+    "problem_outro": "Additionally, raw AI transcription alone proved unreliable for production-grade medical reporting due to inconsistent categorization and formatting instability.",
+    "solution_intro": "To solve these challenges, NurseScript introduced a structured AI-assisted workflow that converts spoken medical handovers into categorized ISBAR documentation.",
+    "solution_points": [
+      "Voice-to-text transcription",
+      "AI-powered medical categorization",
+      "Iterative validation workflows",
+      "Structured report generation",
+      "Exportable clinical documentation"
+    ],
+    "solution_outro": "A dedicated multi-stage AI validation pipeline was engineered to improve reliability and consistency across generated reports.",
+    "architecture": {
+      "title": "Multi-Stage AI Validation Pipeline",
+      "intro": "Instead of relying on a single AI prompt for generating medical reports, NurseScript uses a layered AI refinement architecture designed to improve structural reliability and clinical consistency.",
+      "components": [
+        "Vital data extraction",
+        "ISBAR checklist generation",
+        "Full ISBAR narrative generation"
+      ],
+      "stages": [
+        {
+          "name": "Stage 1 \u2014 Initial Structuring",
+          "description": "The transcription is processed into structured medical content and categorized into report sections."
+        },
+        {
+          "name": "Stage 2 \u2014 AI Revalidation",
+          "description": "The generated content is re-processed to identify missing context, formatting inconsistencies, and structural issues."
+        },
+        {
+          "name": "Stage 3 \u2014 Validation & Locking",
+          "description": "A final validation layer verifies report integrity and locks the finalized medical structure before export."
+        }
+      ],
+      "outro": "This multi-pass architecture significantly improved consistency compared to single-prompt generation workflows."
+    },
+    "technology_groups": {
+      "Frontend": [
+        "React 18",
+        "Vite",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Radix UI"
+      ],
+      "Backend": [
+        "Node.js",
+        "Express.js"
+      ],
+      "Database": [
+        "PostgreSQL",
+        "Drizzle ORM"
+      ],
+      "AI Systems": [
+        "Google Gemini API",
+        "AI Validation Workflows",
+        "Structured Prompt Pipelines"
+      ],
+      "DevOps / Infrastructure": [
+        "Docker",
+        "Docker Compose",
+        "Nginx"
+      ],
+      "Integrations": [
+        "SendGrid API"
+      ]
+    },
+    "challenges": [
+      "Ensuring reliable AI-generated medical structures",
+      "Handling inconsistent speech transcription outputs",
+      "Building iterative validation cycles for healthcare-grade accuracy",
+      "Managing multipart audio uploads at scale",
+      "Maintaining PDF formatting consistency for clinical exports",
+      "Experimenting with multiple Gemini model behaviors for transcription quality",
+      "Designing AI prompts capable of intelligent medical categorization"
+    ],
+    "outcomes": [
+      "Reduced manual documentation effort during nurse shift transitions",
+      "Improved consistency in clinical handover formatting",
+      "Standardized ISBAR reporting workflows",
+      "Enhanced searchability of historical handover records",
+      "Reduced cognitive load on nursing staff",
+      "Improved operational continuity across departments",
+      "Created scalable foundations for future EHR integrations"
+    ],
+    "key_learnings": [
+      {
+        "title": "Reliable AI Systems Require Validation Layers",
+        "description": "Breaking report generation into smaller validated stages dramatically improved consistency and output reliability."
+      },
+      {
+        "title": "Healthcare Workflows Need Structured AI",
+        "description": "Medical reporting requires significantly more deterministic workflows than standard conversational AI systems."
+      },
+      {
+        "title": "Prompt Engineering Is System Design",
+        "description": "AI reliability improved when prompts were treated as modular architectural components rather than isolated instructions."
+      },
+      {
+        "title": "Operational Simplicity Matters",
+        "description": "Healthcare interfaces perform best when workflows reduce cognitive load and documentation friction."
+      }
+    ],
+    "screenshot_captions": [
+      "AI-powered handover dashboard",
+      "Structured ISBAR report generation",
+      "Real-time transcription workflow",
+      "Clinical handover analytics",
+      "Searchable patient handover history",
+      "Responsive healthcare workflow interface"
+    ],
+    "primary_cta": "View Case Study",
+    "secondary_cta": "Explore Architecture",
+    "cta": {
+      "title": "Building AI Systems That Solve Operational Problems",
+      "description": "From healthcare workflows to intelligent automation systems, we design scalable AI-powered platforms focused on reliability, usability, and real-world operational impact.",
+      "button": "Let's Build Something Intelligent",
+      "url": "/contact/"
+    }
   },
   {
     "slug": "crostyl",
@@ -20,9 +171,18 @@
     "full_description": "Crostyl delivers a modern ecommerce experience with a React frontend and Django-powered backend designed for SEO and scalability.",
     "thumbnail": "assets/img/projects/crostyl-thumbnail.webp",
     "hero_image": "assets/img/projects/crostyl-thumbnail.webp",
-    "technologies": ["Ecommerce", "Full Stack"],
-    "features": ["SEO-first architecture", "React storefront UX", "Django backend services"],
-    "screenshots": ["assets/img/content/attender.png"],
+    "technologies": [
+      "Ecommerce",
+      "Full Stack"
+    ],
+    "features": [
+      "SEO-first architecture",
+      "React storefront UX",
+      "Django backend services"
+    ],
+    "screenshots": [
+      "assets/img/content/attender.png"
+    ],
     "live_url": "",
     "github_url": "",
     "featured": true
@@ -34,9 +194,19 @@
     "full_description": "TheBlissfullBeginnings is a premium gifting and lifestyle ecommerce platform focused on elegant branding and delightful shopping journeys.",
     "thumbnail": "assets/img/projects/TheBlissfullBeginnings.webp",
     "hero_image": "assets/img/projects/TheBlissfullBeginnings.webp",
-    "technologies": ["E-commerce", "Branding", "Lifestyle"],
-    "features": ["Premium gifting catalog", "Lifestyle-focused brand storytelling", "Conversion-ready ecommerce UX"],
-    "screenshots": ["assets/img/projects/TheBlissfullBeginnings.webp"],
+    "technologies": [
+      "E-commerce",
+      "Branding",
+      "Lifestyle"
+    ],
+    "features": [
+      "Premium gifting catalog",
+      "Lifestyle-focused brand storytelling",
+      "Conversion-ready ecommerce UX"
+    ],
+    "screenshots": [
+      "assets/img/projects/TheBlissfullBeginnings.webp"
+    ],
     "live_url": "",
     "github_url": "",
     "featured": true
@@ -48,9 +218,18 @@
     "full_description": "The Marketing Freak is an agency web platform focused on branding, conversion pathways, and performance-oriented interface design.",
     "thumbnail": "assets/img/projects/TMF-thumbnail.webp",
     "hero_image": "assets/img/projects/TMF-thumbnail.webp",
-    "technologies": ["Agency", "Branding"],
-    "features": ["Brand storytelling", "Lead generation funnels", "Performance-focused UI"],
-    "screenshots": ["assets/img/content/nursescript.png"],
+    "technologies": [
+      "Agency",
+      "Branding"
+    ],
+    "features": [
+      "Brand storytelling",
+      "Lead generation funnels",
+      "Performance-focused UI"
+    ],
+    "screenshots": [
+      "assets/img/content/nursescript.png"
+    ],
     "live_url": "",
     "github_url": "",
     "featured": true

@@ -9,15 +9,86 @@
         {% set fallback_url = url_for('work') %}
         {% include 'components/back-button.html' %}
         <article class="single-card p-4 p-md-5">
-          <h1 class="title reveal-text mb-3">{{ project.title }}</h1>
-          <p class="mb-4">{{ project.full_description }}</p>
+          <h1 class="title reveal-text mb-2">{{ project.title }}</h1>
+          {% if project.tagline %}<p class="mb-2"><strong>{{ project.tagline }}</strong></p>{% endif %}
+          {% if project.category %}<p class="mb-3"><span class="badge">{{ project.category }}</span></p>{% endif %}
+          <p class="mb-4">{{ project.short_description }}</p>
+
+          <div class="d-flex flex-wrap gap-2 mb-4">
+            {% if project.primary_cta %}<a class="btn magnetic-button" href="#overview">{{ project.primary_cta }}</a>{% endif %}
+            {% if project.secondary_cta %}<a class="btn magnetic-button" href="#architecture">{{ project.secondary_cta }}</a>{% endif %}
+          </div>
+
           <div class="project-hero shadow-sm rounded-4 overflow-hidden mb-4 reveal-img"><img class="w-100" src="{{ url_for('static', filename=project.hero_image) }}" alt="{{ project.title }}"></div>
-          <h3 class="reveal-text">Tech Stack</h3>
-          <div class="d-flex flex-wrap gap-2 mb-4">{% for tech in project.technologies %}<span class="badge">{{ tech }}</span>{% endfor %}</div>
+
+          <h3 id="overview" class="reveal-text">Project Overview</h3>
+          {% if project.overview_paragraphs %}
+            {% for paragraph in project.overview_paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+          {% else %}
+            <p>{{ project.full_description }}</p>
+          {% endif %}
+
+          {% if project.problem_intro %}
+          <h3 class="reveal-text">Problem</h3>
+          <p>{{ project.problem_intro }}</p>
+          <ul>{% for point in project.problem_points %}<li>{{ point }}</li>{% endfor %}</ul>
+          <p>{{ project.problem_outro }}</p>
+          {% endif %}
+
+          {% if project.solution_intro %}
+          <h3 class="reveal-text">Solution</h3>
+          <p>{{ project.solution_intro }}</p>
+          <ul>{% for point in project.solution_points %}<li>{{ point }}</li>{% endfor %}</ul>
+          <p>{{ project.solution_outro }}</p>
+          {% endif %}
+
+          {% if project.architecture %}
+          <h3 id="architecture" class="reveal-text">{{ project.architecture.title }}</h3>
+          <p>{{ project.architecture.intro }}</p>
+          <ul>{% for component in project.architecture.components %}<li>{{ component }}</li>{% endfor %}</ul>
+          {% for stage in project.architecture.stages %}<p><strong>{{ stage.name }}</strong><br>{{ stage.description }}</p>{% endfor %}
+          <p>{{ project.architecture.outro }}</p>
+          {% endif %}
+
           <h3 class="reveal-text">Features</h3>
           <ul>{% for feature in project.features %}<li>{{ feature }}</li>{% endfor %}</ul>
-          <div class="row g-3">{% for screenshot in project.screenshots %}<div class="col-md-6"><div class="project-shot shadow-sm rounded-4 overflow-hidden reveal-img"><img class="w-100" src="{{ url_for('static', filename=screenshot) }}" alt="{{ project.title }} screenshot"></div></div>{% endfor %}</div>
-          <div class="mt-4 d-flex flex-wrap gap-2">{% if project.live_url %}<a class="btn magnetic-button" href="{{ project.live_url }}" target="_blank" rel="noopener noreferrer">Live Demo</a>{% endif %} {% if project.github_url %}<a class="btn magnetic-button" href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer">GitHub</a>{% endif %}</div>
+
+          {% if project.technology_groups %}
+          <h3 class="reveal-text">Technologies</h3>
+          <div class="row g-3 mb-4">
+            {% for group, items in project.technology_groups.items() %}
+            <div class="col-md-6">
+              <h5>{{ group }}</h5>
+              <div class="d-flex flex-wrap gap-2">{% for item in items %}<span class="badge">{{ item }}</span>{% endfor %}</div>
+            </div>
+            {% endfor %}
+          </div>
+          {% else %}
+          <h3 class="reveal-text">Tech Stack</h3>
+          <div class="d-flex flex-wrap gap-2 mb-4">{% for tech in project.technologies %}<span class="badge">{{ tech }}</span>{% endfor %}</div>
+          {% endif %}
+
+          {% if project.challenges %}<h3 class="reveal-text">Engineering Challenges</h3><ul>{% for challenge in project.challenges %}<li>{{ challenge }}</li>{% endfor %}</ul>{% endif %}
+          {% if project.outcomes %}<h3 class="reveal-text">Outcomes</h3><ul>{% for outcome in project.outcomes %}<li>{{ outcome }}</li>{% endfor %}</ul>{% endif %}
+
+          {% if project.key_learnings %}
+          <h3 class="reveal-text">Key Engineering Learnings</h3>
+          <div class="row g-3 mb-4">{% for learning in project.key_learnings %}<div class="col-md-6"><div class="p-3 rounded-4 shadow-sm h-100"><h5>{{ learning.title }}</h5><p class="mb-0">{{ learning.description }}</p></div></div>{% endfor %}</div>
+          {% endif %}
+
+          <div class="row g-3">
+            {% for screenshot in project.screenshots %}
+            <div class="col-md-6"><div class="project-shot shadow-sm rounded-4 overflow-hidden reveal-img"><img class="w-100" src="{{ url_for('static', filename=screenshot) }}" alt="{{ project.title }} screenshot"></div>{% if project.screenshot_captions and project.screenshot_captions[loop.index0] %}<p class="mt-2 mb-0"><small>{{ project.screenshot_captions[loop.index0] }}</small></p>{% endif %}</div>
+            {% endfor %}
+          </div>
+
+          {% if project.cta %}
+          <div class="mt-5 p-4 rounded-4 shadow-sm">
+            <h4>{{ project.cta.title }}</h4>
+            <p>{{ project.cta.description }}</p>
+            <a class="btn magnetic-button" href="{{ project.cta.url or url_for('contact') }}">{{ project.cta.button }}</a>
+          </div>
+          {% endif %}
         </article>
       </div>
     </div>
